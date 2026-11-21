@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Bagazo | Protección Industrial. Evolución Circular. | UDV Ingeniería</title>
+    <link rel="icon" type="image/png" href="Logo sin fondo.png">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#27ae60',
+                            700: '#1E5631',
+                            800: '#164225',
+                            900: '#0f2e19',
+                        },
+                        navy: {
+                            800: '#1f509a',
+                            900: '#0F2C59',
+                            950: '#081936',
+                        },
+                        bagasse: {
+                            100: '#faedcd',
+                            200: '#e6ccb2',
+                            400: '#d4a373',
+                            600: '#9c6644',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar & Patterns */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #081936; }
+        ::-webkit-scrollbar-thumb { background: #27ae60; border-radius: 4px; }
+        
+        .honeycomb-bg {
+            background-color: #0F2C59;
+            background-image: radial-gradient(rgba(39, 174, 96, 0.15) 1px, transparent 1px), radial-gradient(rgba(212, 163, 115, 0.1) 1px, #0F2C59 1px);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+        }
+
+        /* Pulse animation for interactive prototype hotspots */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+            100% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+        .hotspot-btn {
+            animation: pulse-ring 2s infinite;
+        }
+        .hotspot-btn.active {
+            background-color: #27ae60 !important;
+            transform: scale(1.18);
+            z-index: 30;
+        }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { background: #fff !important; color: #000 !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-forest-500 selection:text-white">
+
+    <!-- BARRA ACADÉMICA SUPERIOR (UNIVERSIDAD DA VINCI DE GUATEMALA) -->
+    <div class="bg-navy-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800 no-print">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-2">
+                <span class="bg-forest-500/20 text-forest-500 border border-forest-500/40 px-2 py-0.5 rounded font-semibold">UDV GUATEMALA</span>
+                <span>Facultad de Ingeniería, Industria y Tecnología · Curso de Emprendimiento</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-user-graduate text-bagasse-400 mr-1"></i> Christian Gonzalez</span>
+                <span class="hidden sm:inline"><i class="fa-solid fa-chalkboard-user text-bagasse-400 mr-1"></i> Catedrático: Ing. Henry Fernando Martínez Herrera</span>
+                <span><i class="fa-regular fa-calendar text-bagasse-400 mr-1"></i> 20 Nov 2026</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR FIJO CON LAS 7 SECCIONES OBLIGATORIAS EN ORDEN -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Oficial Eco-Bagazo (Logo sin fondo.png) -->
+                <a href="#seccion-1" class="flex items-center gap-3 group">
+                    <div class="w-14 h-14 rounded-xl bg-white border border-slate-200 p-1 flex items-center justify-center shadow-sm group-hover:scale-105 transition overflow-hidden">
+                        <img src="Logo sin fondo.png" alt="Logo Eco-Bagazo" class="w-full h-full object-contain" onerror="this.classList.add('hidden'); document.getElementById('nav-logo-fallback').classList.remove('hidden');">
+                        <svg id="nav-logo-fallback" viewBox="0 0 64 64" class="hidden w-9 h-9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="32,4 56,18 56,46 32,60 8,46 8,18" stroke="#1E5631" stroke-width="3.5" fill="rgba(30,86,49,0.15)"/>
+                            <path d="M22 44 C22 28, 34 20, 44 18 C42 32, 34 42, 22 44 Z" fill="#27ae60"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="font-display font-bold text-xl tracking-tight text-navy-900">ECO-BAGAZO</span>
+                            <span class="text-[10px] font-bold uppercase px-1.5 py-0.5 bg-forest-100 text-forest-700 rounded">B2B</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 font-medium">Protección industrial. Evolución circular.</p>
+                    </div>
+                </a>
+
+                <!-- Enlaces a las 7 Secciones (Desktop) -->
+                <nav class="hidden xl:flex items-center space-x-1 text-xs font-semibold">
+                    <a href="#seccion-1" class="nav-link px-2.5 py-2 rounded-lg text-navy-900 hover:bg-slate-100 transition"><span class="text-forest-500 mr-1">1.</span>Inicio y Nuestra Marca</a>
+                    <a href="#seccion-2" class="nav-link px-2.5 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition"><span class="text-forest-500 mr-1">2.</span>Problema</a>
+                    <a href="#seccion-3" class="nav-link px-2.5 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition"><span class="text-forest-500 mr-1">3.</span>Proyecto y Prototipo</a>
+                    <a href="#seccion-4" class="nav-link px-2.5 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition"><span class="text-forest-500 mr-1">4.</span>Modelo Canvas</a>
+                    <a href="#seccion-5" class="nav-link px-2.5 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition"><span class="text-forest-500 mr-1">5.</span>Marketing</a>
+                    <a href="#seccion-6" class="nav-link px-2.5 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition"><span class="text-forest-500 mr-1">6.</span>Pitch Video</a>
+                    <a href="#seccion-7" class="nav-link px-2.5 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition"><span class="text-forest-500 mr-1">7.</span>Conclusiones</a>
+                </nav>
+
+                <!-- Botón Rúbrica Evaluador & Menú Móvil -->
+                <div class="flex items-center gap-2">
+                    <button onclick="toggleRubricModal()" class="bg-navy-900 hover:bg-navy-800 text-white text-xs font-semibold px-3.5 py-2.5 rounded-xl shadow-sm flex items-center gap-2 transition">
+                        <i class="fa-solid fa-clipboard-check text-forest-500"></i>
+                        <span>Rúbrica Evaluador</span>
+                    </button>
+                    <button onclick="toggleMobileMenu()" class="xl:hidden p-2.5 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden xl:hidden bg-white border-t border-slate-200 px-4 pt-2 pb-4 space-y-1 shadow-lg">
+            <a href="#seccion-1" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-semibold text-navy-900 hover:bg-slate-100">1. Inicio, Emprendedor, Misión y Visión</a>
+            <a href="#seccion-2" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">2. Problema u oportunidad detectada</a>
+            <a href="#seccion-3" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">3. Descripción del proyecto y Prototipo</a>
+            <a href="#seccion-4" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">4. Modelo de negocio Canvas</a>
+            <a href="#seccion-5" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">5. Estrategia de comunicación y marketing</a>
+            <a href="#seccion-6" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">6. Pitch en video</a>
+            <a href="#seccion-7" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">7. Conclusiones</a>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+         SECCIÓN 1: INICIO, PRESENTACIÓN DEL EMPRENDEDOR, LOGO EN GRANDE, HISTORIA, MISIÓN Y VISIÓN
+         ===================================================================== -->
+    <section id="seccion-1" class="border-b border-slate-200">
+        <!-- Parte Superior: Hero y Ficha del Emprendedor -->
+        <div class="relative honeycomb-bg text-white py-16 lg:py-24 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <!-- Etiqueta de Sección 1 -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forest-500/20 border border-forest-500/40 text-forest-100 text-xs font-semibold mb-6">
+                    <span class="w-2 h-2 rounded-full bg-forest-500 animate-ping"></span>
+                    <span>SECCIÓN 1 · INICIO Y PRESENTACIÓN DEL EMPRENDEDOR</span>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <!-- Columna Izquierda: Propuesta Hero -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+                            Empaques B2B de <span class="text-transparent bg-clip-text bg-gradient-to-r from-forest-500 to-bagasse-200">Bagazo Termo-Estructurado</span> de Alta Resistencia
+                        </h1>
+                        <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+                            Sustituimos en proporción <strong>1-a-1 al poliestireno expandido (EPS / duroport)</strong> en la industria electrónica y de motores pesados mediante matrices bio-integradas de caña de azúcar con barrera hidrofóbica natural. Cero riesgo de mermas en bodega, 100% cumplimiento ESG.
+                        </p>
+
+                        <!-- Métricas Técnicas Clave -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                            <div class="bg-white/10 backdrop-blur-sm border border-white/15 p-3.5 rounded-xl">
+                                <p class="text-2xl font-display font-bold text-forest-500">10.6 MPa</p>
+                                <p class="text-xs text-slate-300">Resistencia máxima a tensión (+25%)</p>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm border border-white/15 p-3.5 rounded-xl">
+                                <p class="text-2xl font-display font-bold text-bagasse-200">8.52%</p>
+                                <p class="text-xs text-slate-300">Absorción hídrica reducida (vs 22.3%)</p>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm border border-white/15 p-3.5 rounded-xl">
+                                <p class="text-2xl font-display font-bold text-white">1 a 1</p>
+                                <p class="text-xs text-slate-300">Sustitución estructural frente al EPS</p>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm border border-white/15 p-3.5 rounded-xl">
+                                <p class="text-2xl font-display font-bold text-forest-500">100%</p>
+                                <p class="text-xs text-slate-300">Biodegradable y Compostable</p>
+                            </div>
+                        </div>
+
+                        <!-- Botones de Navegación Rápida -->
+                        <div class="flex flex-wrap gap-3 pt-2">
+                            <a href="#identidad-corporativa" class="bg-forest-500 hover:bg-forest-700 text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg shadow-forest-500/25 flex items-center gap-2 transition">
+                                <i class="fa-solid fa-compass"></i>
+                                <span>Conocer Nuestro Logo, Misión e Historia</span>
+                            </a>
+                            <a href="#seccion-6" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-3.5 rounded-xl flex items-center gap-2 transition">
+                                <i class="fa-solid fa-circle-play text-bagasse-400"></i>
+                                <span>Ver Video del Pitch Oficial</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Ficha del Emprendedor (Trabajo Individual) -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white text-slate-800 rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
+                            <div class="bg-gradient-to-r from-forest-700 to-navy-900 px-6 py-4 flex items-center justify-between text-white">
+                                <div>
+                                    <span class="text-[11px] uppercase tracking-wider font-bold text-bagasse-200">Presentación del Emprendedor</span>
+                                    <h2 class="text-lg font-display font-bold">Fundador & Líder de Ingeniería</h2>
+                                </div>
+                                <span class="bg-white/15 text-xs px-2.5 py-1 rounded-full font-medium">Trabajo Individual</span>
+                            </div>
+
+                            <div class="p-6 space-y-5">
+                                <!-- Foto / Avatar del Estudiante -->
+                                <div class="flex items-center gap-4">
+                                    <div class="relative w-20 h-20 rounded-2xl bg-navy-900 flex-shrink-0 overflow-hidden border-2 border-forest-500 shadow-md flex items-center justify-center">
+                                        <img id="founder-photo" src="perfil.jpg" alt="Christian Gonzalez" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); document.getElementById('founder-svg').classList.add('hidden');">
+                                        <!-- Avatar Vectorial de Ingeniero Industrial por defecto -->
+                                        <svg id="founder-svg" viewBox="0 0 100 100" class="w-16 h-16">
+                                            <circle cx="50" cy="36" r="16" fill="#D4A373"/>
+                                            <!-- Casco de Ingeniero -->
+                                            <path d="M32 32 C32 18, 68 18, 68 32 Z" fill="#27ae60"/>
+                                            <rect x="29" y="31" width="42" height="4" rx="2" fill="#1E5631"/>
+                                            <!-- Traje ejecutivo / industrial -->
+                                            <path d="M22 86 C22 62, 78 62, 78 86 Z" fill="#0F2C59"/>
+                                            <path d="M44 64 L50 82 L56 64 Z" fill="#ffffff"/>
+                                            <path d="M48 68 L50 82 L52 68 Z" fill="#27ae60"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-navy-900">Christian Gonzalez</h3>
+                                        <p class="text-xs font-semibold text-forest-700">Ingeniería Industrial</p>
+                                        <p class="text-xs text-slate-500 mt-0.5">Universidad Da Vinci de Guatemala</p>
+                                        <label class="inline-block mt-2 text-[11px] text-navy-800 hover:underline cursor-pointer font-medium no-print">
+                                            <i class="fa-solid fa-camera mr-1"></i>Cambiar foto personal
+                                            <input type="file" accept="image/*" class="hidden" onchange="loadCustomPhoto(event, 'founder-photo', 'founder-svg')">
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Biografía Breve -->
+                                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-xs leading-relaxed text-slate-700">
+                                    <p class="font-bold text-navy-900 mb-1"><i class="fa-solid fa-graduation-cap text-forest-500 mr-1.5"></i>Biografía, Formación e Intereses:</p>
+                                    Estudiante de Ingeniería Industrial con enfoque en diseño de procesos de manufactura, optimización de cadenas de suministro B2B, control de calidad (<em>Takt time</em>, análisis CAPEX/OPEX) e innovación en biomateriales de economía circular. Apasionado por transformar pasivos ambientales agroindustriales en soluciones de ingeniería de alto desempeño.
+                                </div>
+
+                                <!-- Motivación e Inspiración del Proyecto -->
+                                <div class="bg-forest-50/70 p-3.5 rounded-xl border border-forest-100 text-xs leading-relaxed text-slate-700">
+                                    <p class="font-bold text-forest-800 mb-1"><i class="fa-solid fa-lightbulb text-forest-500 mr-1.5"></i>Motivación del Proyecto (Problema e Inspiración):</p>
+                                    Al observar cómo toneladas de poliestireno expandido (duroport) de electrodomésticos y motores terminan en los vertederos de Guatemala sin posibilidad de reciclaje viable, y contrastarlo con la abundancia de biomasa de caña de azúcar en la Costa Sur, surgió la motivación de crear <strong>Eco-Bagazo</strong>: aplicar ingeniería de termocompresión para que las empresas logísticas protejan sus equipos pesados sin contaminar ni arriesgar su rentabilidad.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================================================
+             NUEVO BLOQUE DENTRO DE SECCIÓN 1: LOGO EN GRANDE, HISTORIA, MISIÓN, VISIÓN Y VALORES
+             ===================================================================== -->
+        <div id="identidad-corporativa" class="py-16 lg:py-24 bg-gradient-to-b from-slate-50 to-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-xs font-bold uppercase tracking-wider text-forest-700 bg-forest-100 px-3.5 py-1.5 rounded-full">ADN Corporativo · Eco-Bagazo Guatemala</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-3">Nuestra Identidad, Historia, Misión y Visión</h2>
+                    <p class="text-sm text-slate-600 mt-2">
+                        Donde la potencia agroindustrial de la caña de azúcar guatemalteca se une con la ingeniería de precisión para redefinir el embalaje B2B.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-10 items-center mb-14">
+                    <!-- Columna Izquierda (5 cols): Vitrina del Logotipo en Gran Formato -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white rounded-3xl border-2 border-slate-200 shadow-2xl p-8 text-center relative overflow-hidden group">
+                            <div class="absolute top-3 right-3 flex gap-1.5 no-print">
+                                <button onclick="switchShowcaseLogo('transparent')" id="btn-logo-trans" class="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-navy-900 text-white transition">PNG Sin Fondo</button>
+                                <button onclick="switchShowcaseLogo('white')" id="btn-logo-white" class="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition">JPG Fondo Blanco</button>
+                            </div>
+
+                            <!-- Contenedor del Logo en Grande -->
+                            <div id="logo-showcase-box" class="my-4 p-6 rounded-2xl bg-gradient-to-br from-slate-50 via-white to-forest-50/40 border border-slate-100 flex items-center justify-center min-h-[310px]">
+                                <img id="main-showcase-logo" src="Logo sin fondo.png" alt="Logotipo Oficial Eco-Bagazo en Gran Formato" class="w-72 sm:w-80 h-auto object-contain mx-auto drop-shadow-md group-hover:scale-105 transition duration-500" onerror="this.src='logo con fondo blanco.jpg'">
+                            </div>
+
+                            <!-- Simbología del Isotipo -->
+                            <div class="text-left bg-slate-50 p-4 rounded-2xl border border-slate-200 mt-4 space-y-2 text-xs">
+                                <p class="font-bold text-navy-900 uppercase text-[11px] tracking-wider"><i class="fa-solid fa-shapes text-forest-600 mr-1.5"></i>Simbología de Ingeniería del Logotipo:</p>
+                                <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-600">
+                                    <div><strong class="text-navy-900">• Hexágono Panal:</strong> Absorción de impacto axial (10.6 MPa).</div>
+                                    <div><strong class="text-forest-700">• Hoja de Caña:</strong> Origen 100% renovable y circular.</div>
+                                    <div><strong class="text-navy-900">• Silueta Industrial:</strong> Enfoque B2B y manufactura limpia.</div>
+                                    <div><strong class="text-bagasse-600">• Fibra Natural:</strong> Pulpa de bagazo sin blanqueo químico.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha (7 cols): Historia, Misión y Visión -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <!-- Nuestra Historia -->
+                        <div class="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-md relative overflow-hidden">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-2xl bg-bagasse-100 text-bagasse-600 flex items-center justify-center text-xl flex-shrink-0 font-bold shadow-sm">
+                                    <i class="fa-solid fa-clock-rotate-left"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[11px] font-bold uppercase tracking-wider text-bagasse-600">El Origen del Proyecto</span>
+                                    <h3 class="text-xl font-display font-bold text-navy-900 mt-0.5 mb-2">Nuestra Historia: De Residuo Agroindustrial a Blindaje B2B</h3>
+                                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                        <strong>Eco-Bagazo</strong> nació en 2026 en las aulas y laboratorios de la <strong>Facultad de Ingeniería, Industria y Tecnología de la Universidad Da Vinci de Guatemala</strong>. Su fundador, <strong>Christian Gonzalez</strong>, identificó una paradoja crítica en la industria nacional: mientras los centros logísticos importaban y desechaban toneladas de duroport (EPS) que contaminan por más de 500 años, en la Costa Sur de Guatemala los ingenios azucareros generaban millones de toneladas de bagazo de caña.
+                                    </p>
+                                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mt-2">
+                                        Tras salir al campo y descubrir que el 91% del bagazo ya se empleaba en cogeneración eléctrica y que el mayor freno de los directores logísticos era el miedo a la humedad tropical, el proyecto evolucionó: dejamos atrás la idea de un "empaque artesanal" y diseñamos el prototipo <strong>BIO-MOTOR 1.0</strong>, combinando el 9% de biomasa excedentaria con termocompresión CNC y una barrera hidrofóbica de almidón de yuca.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Misión y Visión en 2 Columnas -->
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <!-- Misión -->
+                            <div class="bg-navy-900 text-white p-6 rounded-2xl shadow-lg border border-navy-800 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <span class="text-xs font-bold uppercase tracking-wider text-forest-400 bg-forest-500/20 px-3 py-1 rounded-full">Nuestra Misión</span>
+                                        <i class="fa-solid fa-bullseye text-bagasse-400 text-xl"></i>
+                                    </div>
+                                    <h4 class="font-display text-lg font-bold text-white mb-2">Ingeniería que Protege Activos y el Planeta</h4>
+                                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                        Diseñar, manufacturar y proveer al sector industrial B2B soluciones de empaque termo-estructuradas a partir de biomasa excedentaria de bagazo de caña y biopolímeros locales, sustituyendo 1-a-1 al poliestireno expandido (EPS) con idéntica resistencia mecánica (10.6 MPa) y protección anti-humedad, eliminando el riesgo de mermas y acelerando sus metas ESG.
+                                    </p>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-white/10 text-[11px] text-bagasse-200 font-semibold">
+                                    <i class="fa-solid fa-check-double mr-1"></i>Compromiso: Cero Plástico · Cero Mermas
+                                </div>
+                            </div>
+
+                            <!-- Visión -->
+                            <div class="bg-forest-800 text-white p-6 rounded-2xl shadow-lg border border-forest-700 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <span class="text-xs font-bold uppercase tracking-wider text-bagasse-200 bg-white/15 px-3 py-1 rounded-full">Nuestra Visión</span>
+                                        <i class="fa-solid fa-eye text-bagasse-200 text-xl"></i>
+                                    </div>
+                                    <h4 class="font-display text-lg font-bold text-white mb-2">Liderazgo Regional en Economía Circular B2B</h4>
+                                    <p class="text-xs sm:text-sm text-slate-100 leading-relaxed">
+                                        Consolidarnos para el año 2030 como la empresa referente en Centroamérica en ingeniería de bio-embalaje industrial de alto desempeño, operando plantas modulares de termocompresión certificadas bajo la norma ASTM D6400 que descarbonicen las cadenas de suministro de la industria electrónica, metalmecánica y agroexportadora.
+                                    </p>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-white/15 text-[11px] text-forest-200 font-semibold">
+                                    <i class="fa-solid fa-globe-americas mr-1"></i>Horizonte 2030: Estándar Industrial en Centroamérica
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pilares y Valores Corporativos -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <div class="bg-white p-3.5 rounded-xl border border-slate-200 text-center shadow-sm">
+                                <i class="fa-solid fa-Microscope text-navy-900 text-base mb-1"></i>
+                                <p class="text-xs font-bold text-navy-900">Rigor Técnico</p>
+                                <p class="text-[11px] text-slate-500">Validación en MPa y Cobb</p>
+                            </div>
+                            <div class="bg-white p-3.5 rounded-xl border border-slate-200 text-center shadow-sm">
+                                <i class="fa-solid fa-arrows-spin text-forest-600 text-base mb-1"></i>
+                                <p class="text-xs font-bold text-navy-900">Circularidad Real</p>
+                                <p class="text-[11px] text-slate-500">Biomasa 100% compostable</p>
+                            </div>
+                            <div class="bg-white p-3.5 rounded-xl border border-slate-200 text-center shadow-sm">
+                                <i class="fa-solid fa-shield-halved text-bagasse-600 text-base mb-1"></i>
+                                <p class="text-xs font-bold text-navy-900">Confiabilidad B2B</p>
+                                <p class="text-[11px] text-slate-500">Seguridad en bodega</p>
+                            </div>
+                            <div class="bg-white p-3.5 rounded-xl border border-slate-200 text-center shadow-sm">
+                                <i class="fa-solid fa-leaf text-forest-600 text-base mb-1"></i>
+                                <p class="text-xs font-bold text-navy-900">Química Limpia</p>
+                                <p class="text-[11px] text-slate-500">Sin blanqueo clorado</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         SECCIÓN 2: PROBLEMA U OPORTUNIDAD DETECTADA (+ IMAGEN2.JPG)
+         ===================================================================== -->
+    <section id="seccion-2" class="py-16 lg:py-24 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-forest-700 bg-forest-100 px-3 py-1 rounded-full">Sección 2 · Diagnóstico y Evidencia</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-3">Problema u Oportunidad Detectada</h2>
+                </div>
+                <p class="text-sm text-slate-600 max-w-xl">
+                    Demostración técnica y de mercado sobre por qué la sustitución del poliestireno expandido (EPS) en la logística B2B es una urgencia respaldada por datos científicos.
+                </p>
+            </div>
+
+            <!-- 3 Bloques: Situación, Necesidad y Justificación -->
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-11 h-11 rounded-xl bg-red-100 text-red-600 flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">1. Situación Identificada</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        El sector industrial y de retail electrónico depende masivamente del <strong>poliestireno expandido (EPS / duroport)</strong> para amortiguar equipos pesados. Este derivado del petróleo se fractura ante cargas concentradas, ocupa gran volumen en bodegas y no es biodegradable.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-11 h-11 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-warehouse"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">2. Necesidad del Mercado</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Los Directores de Logística y Sostenibilidad (B2B) están presionados por sus juntas directivas para cumplir metas <strong>ESG (cero plástico)</strong>, pero sufren una fuerte <em>"aversión a la pérdida"</em>: temen que un empaque ecológico absorba humedad o colapse bajo compresión.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-11 h-11 rounded-xl bg-forest-100 text-forest-700 flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">3. Justificación del Proyecto</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Guatemala es potencia agroindustrial azucarera. Transformar la fracción excedentaria del bagazo de caña mediante <strong>termocompresión de alta densidad y biopolímeros hidrofóbicos</strong> permite entregar un inserto protector que supera la tenacidad del EPS y elimina el riesgo por humedad.
+                    </p>
+                </div>
+            </div>
+
+            <!-- COMPARATIVA VISUAL DE LABORATORIO: IMAGEN2.JPG (EPS VS BAGAZO DE ALTA DENSIDAD) -->
+            <div class="mb-12 bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-800 grid lg:grid-cols-12 items-center">
+                <div class="lg:col-span-7 bg-black relative">
+                    <img src="imagen2.jpg" alt="Ensayo de Compresión: Poliestireno Expandido (EPS) vs Matriz de Bagazo de Alta Densidad" class="w-full h-full object-cover max-h-[430px]">
+                    <div class="absolute bottom-3 left-3 bg-black/75 backdrop-blur-md text-white text-[11px] px-3 py-1.5 rounded-lg border border-white/15">
+                        <i class="fa-solid fa-flask-vial text-forest-400 mr-1.5"></i>Ensayo Comparativo de Compresión Axial: Fractura frágil del EPS vs. Absorción elástica del Bagazo (10.00 - 10.6 MPa)
+                    </div>
+                </div>
+                <div class="lg:col-span-5 p-6 sm:p-8 text-white space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-wider text-forest-400 bg-forest-500/20 px-3 py-1 rounded-full border border-forest-500/30">Evidencia de Laboratorio</span>
+                    <h3 class="font-display text-2xl font-bold leading-snug">
+                        ¿Por qué falla el Duroport (EPS) frente a la Matriz de Bagazo?
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        Ante impactos dinámicos o sobrecarga en estiba, el <strong>poliestireno expandido (izquierda)</strong> sufre fractura frágil catastrófica, desmoronándose en microplásticos y dejando desprotegido el motor eléctrico.
+                    </p>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        En contraste, la <strong>matriz de bagazo de alta densidad (derecha)</strong> actúa como una red viscoelástica de fibras de celulosa deslignificada que disipa la carga axial (hasta <strong>10.6 MPa</strong>) manteniendo el motor intacto y centrado.
+                    </p>
+                    <div class="grid grid-cols-2 gap-3 pt-2">
+                        <div class="bg-red-500/15 border border-red-500/30 p-3 rounded-xl">
+                            <span class="text-xs font-bold text-red-400 uppercase">Poliestireno (EPS)</span>
+                            <p class="text-sm font-bold text-white mt-0.5">Colapso Frágil</p>
+                            <span class="text-[11px] text-slate-400">+500 años en degradarse</span>
+                        </div>
+                        <div class="bg-forest-500/20 border border-forest-500/40 p-3 rounded-xl">
+                            <span class="text-xs font-bold text-forest-400 uppercase">Eco-Bagazo Matrix</span>
+                            <p class="text-sm font-bold text-white mt-0.5">10.6 MPa Tenacidad</p>
+                            <span class="text-[11px] text-slate-300">100% Compostable</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Datos y Evidencias con Fuentes Citadas (Requisito de Lista de Verificación) -->
+            <div class="bg-navy-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl">
+                <div class="flex items-center justify-between flex-wrap gap-2 mb-6 border-b border-white/15 pb-4">
+                    <div>
+                        <h3 class="text-xl font-display font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-chart-column text-forest-500"></i>
+                            <span>Datos y Evidencias Científicas que Respaldan la Oportunidad</span>
+                        </h3>
+                        <p class="text-xs text-slate-300 mt-1">Investigación documental y trabajo de campo con fuentes verificadas.</p>
+                    </div>
+                    <span class="text-xs bg-forest-500 text-white px-3 py-1 rounded-full font-semibold">4 Fuentes Citadas</span>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <!-- Evidencia 1 -->
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/15 p-5 rounded-xl flex flex-col justify-between">
+                        <div>
+                            <span class="text-3xl font-display font-bold text-bagasse-200">40%</span>
+                            <h4 class="font-bold text-sm mt-2 text-white">Crisis de Plásticos de Embalaje</h4>
+                            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                                El 40% de los residuos plásticos globales proviene de empaques de un solo uso; el EPS tarda más de 500 años en degradarse y fragmentarse en microplásticos.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-white/10 text-[11px] text-forest-300 font-medium">
+                            <i class="fa-solid fa-book-bookmark mr-1"></i> Fuente: ONU Medio Ambiente (PNUMA) - Informe sobre Contaminación por Plásticos.
+                        </div>
+                    </div>
+
+                    <!-- Evidencia 2 -->
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/15 p-5 rounded-xl flex flex-col justify-between">
+                        <div>
+                            <span class="text-3xl font-display font-bold text-forest-500">10.6 MPa</span>
+                            <h4 class="font-bold text-sm mt-2 text-white">Viabilidad Mecánica del Bagazo</h4>
+                            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                                El bagazo posee 40-50% de celulosa. El pulpeo con carbonato/bicarbonato y deslignificación con oxígeno (rendimiento 72%) eleva sus propiedades mecánicas un +25%, logrando 10.6 MPa.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-white/10 text-[11px] text-forest-300 font-medium">
+                            <i class="fa-solid fa-book-bookmark mr-1"></i> Fuente: BioResources Journal (2025) - "Molded Pulp Packaging from Sugarcane Bagasse".
+                        </div>
+                    </div>
+
+                    <!-- Evidencia 3 -->
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/15 p-5 rounded-xl flex flex-col justify-between">
+                        <div>
+                            <span class="text-3xl font-display font-bold text-bagasse-200">8.52%</span>
+                            <h4 class="font-bold text-sm mt-2 text-white">Solución a la Barrera de Humedad</h4>
+                            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                                La incorporación de aglutinante de almidón de yuca (tapioca) y recubrimiento de goma laca (shellac) reduce la absorción de agua del bagazo moldeado de 22.36% a 8.52%.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-white/10 text-[11px] text-forest-300 font-medium">
+                            <i class="fa-solid fa-book-bookmark mr-1"></i> Fuente: Estudios de Impermeabilización con Almidón y Goma Laca en Biopolímeros (BioResources).
+                        </div>
+                    </div>
+
+                    <!-- Evidencia 4 -->
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/15 p-5 rounded-xl flex flex-col justify-between">
+                        <div>
+                            <span class="text-3xl font-display font-bold text-forest-500">91% / 9%</span>
+                            <h4 class="font-bold text-sm mt-2 text-white">Realidad del Suministro en Guatemala</h4>
+                            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                                En Guatemala el 91% del bagazo se utiliza en cogeneración eléctrica en los ingenios; por ello, nuestro modelo B2B asegura contratos sobre el 9% de biomasa excedentaria.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-white/10 text-[11px] text-forest-300 font-medium">
+                            <i class="fa-solid fa-book-bookmark mr-1"></i> Fuente: Bitácora de Trabajo de Campo y Estadísticas de Cogeneración (CENGICAÑA / Azucareros GT).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         SECCIÓN 3: DESCRIPCIÓN DEL PROYECTO Y PROTOTIPO (+ PROTOTIPO_4, IMAGEN3, IMAGEN1, IMAGEN4)
+         ===================================================================== -->
+    <section id="seccion-3" class="py-16 lg:py-24 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <span class="text-xs font-bold uppercase tracking-wider text-forest-700 bg-forest-100 px-3 py-1 rounded-full">Sección 3 · Ingeniería de Producto y Empatía</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-3">Descripción del Proyecto: Eco-Bagazo</h2>
+            </div>
+
+            <!-- Tarjetas de Identidad del Proyecto -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                    <span class="text-xs font-bold text-forest-700 uppercase">Nombre del Proyecto</span>
+                    <h3 class="text-lg font-bold text-navy-900 mt-1">Eco-Bagazo (Línea BIO-MOTOR 1.0)</h3>
+                    <p class="text-xs text-slate-600 mt-2">Empaques industriales e insertos amortiguadores 3D termo-moldeados a base de pulpa de bagazo de caña.</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                    <span class="text-xs font-bold text-forest-700 uppercase">Propósito</span>
+                    <h3 class="text-lg font-bold text-navy-900 mt-1">Descarbonizar la Logística B2B</h3>
+                    <p class="text-xs text-slate-600 mt-2">Acelerar la transición hacia la Economía Circular en Guatemala ofreciendo protección técnica de nivel industrial sin plásticos.</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                    <span class="text-xs font-bold text-forest-700 uppercase">Necesidad que Resuelve</span>
+                    <h3 class="text-lg font-bold text-navy-900 mt-1">Cero Mermas + Metas ESG</h3>
+                    <p class="text-xs text-slate-600 mt-2">Elimina el dilema entre cumplir metas corporativas ecológicas y proteger equipos pesados frente a humedad y caídas.</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                    <span class="text-xs font-bold text-forest-700 uppercase">Valor Diferencial</span>
+                    <h3 class="text-lg font-bold text-navy-900 mt-1">Matriz Bio-Integrada + Yuca</h3>
+                    <p class="text-xs text-slate-600 mt-2">Nervaduras tipo panal de abejas (10.6 MPa), sellado hidrofóbico con almidón de yuca y proceso sin blanqueamiento químico.</p>
+                </div>
+            </div>
+
+            <!-- PÚBLICO OBJETIVO: PESTAÑAS INTERACTIVAS (CLIENTE IDEAL & MAPA DE EMPATÍA) -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden mb-14">
+                <div class="bg-navy-900 px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+                    <div class="text-white">
+                        <h3 class="text-lg font-display font-bold">Público Objetivo: Cliente Ideal y Mapa de Empatía</h3>
+                        <p class="text-xs text-slate-300">Haz clic en las pestañas para explorar la validación de empatía B2B</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button id="tab-persona-btn" onclick="switchEmpathyTab('persona')" class="px-4 py-2 rounded-xl text-xs font-bold bg-forest-500 text-white transition">
+                            <i class="fa-solid fa-user-tie mr-1.5"></i>Cliente Ideal (Buyer Persona)
+                        </button>
+                        <button id="tab-empathy-btn" onclick="switchEmpathyTab('empathy')" class="px-4 py-2 rounded-xl text-xs font-bold bg-white/10 text-slate-200 hover:bg-white/20 transition">
+                            <i class="fa-solid fa-brain mr-1.5"></i>Mapa de Empatía Completo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Contenido Pestaña 1: Cliente Ideal -->
+                <div id="tab-persona-content" class="p-6 sm:p-8">
+                    <div class="grid lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-4 bg-slate-50 p-6 rounded-2xl border border-slate-200 text-center">
+                            <div class="w-20 h-20 rounded-full bg-navy-900 text-white mx-auto flex items-center justify-center text-3xl font-bold mb-3 border-4 border-forest-500">
+                                RH
+                            </div>
+                            <h4 class="text-xl font-bold text-navy-900">Roberto Hernández</h4>
+                            <p class="text-xs font-semibold text-forest-700 mt-1">Director de Cadena de Suministro y Sostenibilidad (B2B)</p>
+                            <div class="mt-4 pt-4 border-t border-slate-200 text-xs text-slate-600 space-y-1.5 text-left">
+                                <p><strong>Edad:</strong> 45 años</p>
+                                <p><strong>Ubicación:</strong> Zonas industriales de Ciudad de Guatemala / Villa Nueva</p>
+                                <p><strong>Formación:</strong> Ingeniero Industrial con Maestría en Logística</p>
+                                <p><strong>Canales:</strong> LinkedIn, Ferias Logísticas y WhatsApp Business</p>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8 grid sm:grid-cols-2 gap-4">
+                            <div class="p-4 rounded-xl bg-red-50 border border-red-100">
+                                <h5 class="text-xs font-bold uppercase text-red-800"><i class="fa-solid fa-fire-flame-curved mr-1.5"></i>Problema y Mayor Dolor</h5>
+                                <p class="text-xs text-slate-700 mt-2 leading-relaxed">
+                                    Su junta directiva le exige eliminar el duroport (EPS) para cumplir metas ESG, pero él sufre pánico operativo a que un empaque biodegradable absorba humedad en bodegas tropicales y dañe motores o televisores costosos.
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-forest-50 border border-forest-100">
+                                <h5 class="text-xs font-bold uppercase text-forest-800"><i class="fa-solid fa-shield-halved mr-1.5"></i>Cómo le ayuda Eco-Bagazo</h5>
+                                <p class="text-xs text-slate-700 mt-2 leading-relaxed">
+                                    Le provee un inserto termo-moldeado con diseño de panal y barrera de almidón de yuca que bloquea la humedad (8.52%) y soporta impactos severos sin alterar el tiempo de ciclo (<em>Takt time</em>) de sus operarios.
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-blue-50 border border-blue-100">
+                                <h5 class="text-xs font-bold uppercase text-navy-900"><i class="fa-solid fa-bullseye mr-1.5"></i>Insight Principal</h5>
+                                <p class="text-xs text-slate-700 mt-2 leading-relaxed">
+                                    "Roberto necesita garantías técnicas certificadas (anti-humedad y PSI), porque el miedo a perder mercancía en bodega frena su deseo urgente de cumplir las metas ESG corporativas."
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-amber-50 border border-amber-100">
+                                <h5 class="text-xs font-bold uppercase text-amber-900"><i class="fa-solid fa-handshake-simple mr-1.5"></i>Qué lo motiva a comprar</h5>
+                                <p class="text-xs text-slate-700 mt-2 leading-relaxed">
+                                    Ver pruebas de laboratorio (<em>Drop-test</em> y ensayo Cobb de humedad) directamente en su línea de empaque y comprobar que existe paridad de costo logístico frente al EPS.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenido Pestaña 2: Mapa de Empatía -->
+                <div id="tab-empathy-content" class="hidden p-6 sm:p-8 bg-slate-50">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-xl border border-slate-200">
+                            <h5 class="font-bold text-navy-900 text-sm mb-2"><i class="fa-solid fa-cloud text-forest-500 mr-1.5"></i>¿Qué piensa y siente?</h5>
+                            <p class="text-xs text-slate-600 leading-relaxed">"Quiero ser un líder sostenible en mi empresa, pero si un lote de motores o pantallas se daña por culpa de un empaque húmedo, el responsable directo del sobrecosto seré yo."</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200">
+                            <h5 class="font-bold text-navy-900 text-sm mb-2"><i class="fa-solid fa-eye text-forest-500 mr-1.5"></i>¿Qué ve?</h5>
+                            <p class="text-xs text-slate-600 leading-relaxed">Ve contenedores llenos de duroport roto en su centro de distribución, clientes exigiendo empaques limpios y competidores regionales publicando reportes anuales ESG.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200">
+                            <h5 class="font-bold text-navy-900 text-sm mb-2"><i class="fa-solid fa-ear-listen text-forest-500 mr-1.5"></i>¿Qué oye?</h5>
+                            <p class="text-xs text-slate-600 leading-relaxed">Oye a la junta directiva pedir reducción de huella de carbono, pero también oye a los jefes de bodega quejarse de que el cartón convencional se debilita en época lluviosa.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200">
+                            <h5 class="font-bold text-navy-900 text-sm mb-2"><i class="fa-solid fa-comments text-forest-500 mr-1.5"></i>¿Qué dice y hace?</h5>
+                            <p class="text-xs text-slate-600 leading-relaxed">Exige fichas técnicas de resistencia (MPa, PSI, absorción Cobb) antes de autorizar cualquier cambio de proveedor y realiza pruebas piloto rigurosas.</p>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-xl border border-red-200">
+                            <h5 class="font-bold text-red-800 text-sm mb-2"><i class="fa-solid fa-bolt text-red-600 mr-1.5"></i>Esfuerzos y Dolores (Pains)</h5>
+                            <p class="text-xs text-slate-700 leading-relaxed">Aversión al riesgo operativo, altos costos de cambio (matricería), temor a la humedad tropical y desconfianza hacia productos ecológicos de apariencia "artesanal".</p>
+                        </div>
+                        <div class="bg-forest-50 p-4 rounded-xl border border-forest-200">
+                            <h5 class="font-bold text-forest-800 text-sm mb-2"><i class="fa-solid fa-trophy text-forest-600 mr-1.5"></i>Resultados y Necesidades (Gains)</h5>
+                            <p class="text-xs text-slate-700 leading-relaxed">Sustitución 1-a-1 del EPS sin detener la línea de empaque, certificación ASTM D6400 para reportes ESG y cero mermas por vibración o humedad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VISOR INTERACTIVO DEL PROTOTIPO: BIO-MOTOR 1.0 (PROTOTIPO_4.JPG + IMAGEN3.JPG) -->
+            <div class="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden mb-14">
+                <div class="bg-gradient-to-r from-navy-900 via-navy-800 to-forest-800 p-6 sm:p-8 text-white flex flex-wrap items-center justify-between gap-4">
+                    <div>
+                        <span class="text-xs uppercase font-bold tracking-wider text-bagasse-200">Prototipo Funcional de Ingeniería · Etapa Prototipado</span>
+                        <h3 class="text-2xl sm:text-3xl font-display font-bold mt-1">Eco-Bagazo Armor: BIO-MOTOR 1.0</h3>
+                        <p class="text-xs sm:text-sm text-slate-200 mt-1">Haz clic en los puntos numerados <span class="inline-block w-5 h-5 rounded-full bg-red-500 text-white text-center font-bold text-xs leading-5">1</span> al <span class="inline-block w-5 h-5 rounded-full bg-red-500 text-white text-center font-bold text-xs leading-5">7</span> sobre el prototipo para inspeccionar su ingeniería.</p>
+                    </div>
+                    <label class="bg-white/15 hover:bg-white/25 border border-white/25 text-white text-xs font-semibold px-4 py-2.5 rounded-xl cursor-pointer transition flex items-center gap-2 no-print">
+                        <i class="fa-solid fa-upload text-bagasse-200"></i>
+                        <span>Cambiar imagen de prototipo</span>
+                        <input type="file" accept="image/*" class="hidden" onchange="loadCustomPhoto(event, 'proto-img', 'proto-svg-fallback')">
+                    </label>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8 p-6 sm:p-8 items-start">
+                    <!-- Columna Imagen / Diagrama con Hotspots 1 al 7 -->
+                    <div class="lg:col-span-7">
+                        <div class="relative rounded-2xl overflow-hidden border-2 border-slate-200 bg-gradient-to-b from-slate-200 to-slate-100 shadow-inner">
+                            <!-- Carga prototipo_4.jpg; si no existe, prueba prototipo.png; si tampoco, muestra el SVG -->
+                            <img id="proto-img" src="prototipo_4.jpg" alt="Prototipo Eco-Bagazo BIO-MOTOR 1.0" class="w-full h-auto block max-h-[460px] object-contain mx-auto" onerror="if(this.src.indexOf('prototipo.png')===-1){this.src='prototipo.png';}else{this.classList.add('hidden'); document.getElementById('proto-svg-fallback').classList.remove('hidden');}">
+
+                            <!-- Render Vectorial 3D de Respaldo -->
+                            <svg id="proto-svg-fallback" viewBox="0 0 800 500" class="hidden w-full h-auto block">
+                                <defs>
+                                    <radialGradient id="studioBg" cx="50%" cy="50%" r="60%">
+                                        <stop offset="0%" stop-color="#f1f5f9"/>
+                                        <stop offset="100%" stop-color="#cbd5e1"/>
+                                    </radialGradient>
+                                    <linearGradient id="bagasseGrad" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0%" stop-color="#e6ccb2"/>
+                                        <stop offset="50%" stop-color="#d4a373"/>
+                                        <stop offset="100%" stop-color="#9c6644"/>
+                                    </linearGradient>
+                                    <linearGradient id="metalGrad" x1="0" y1="0" x2="1" y2="0">
+                                        <stop offset="0%" stop-color="#64748b"/>
+                                        <stop offset="50%" stop-color="#e2e8f0"/>
+                                        <stop offset="100%" stop-color="#475569"/>
+                                    </linearGradient>
+                                </defs>
+                                <rect width="800" height="500" fill="url(#studioBg)"/>
+                                <path d="M310,95 C280,115 290,185 300,240 C285,300 290,360 325,375 L485,382 C520,365 525,295 510,235 C525,175 520,105 480,85 C440,70 420,95 400,95 C380,95 345,75 310,95 Z" fill="url(#bagasseGrad)" stroke="#7f5539" stroke-width="4"/>
+                                <rect x="358" y="135" width="88" height="175" rx="14" fill="url(#metalGrad)" stroke="#334155" stroke-width="2"/>
+                            </svg>
+
+                            <!-- BOTONES INTERACTIVOS NUMERADOS (HOTSPOTS 1 AL 7) -->
+                            <button onclick="selectHotspot(1)" id="hs-1" style="top: 23%; left: 39%;" class="hotspot-btn active absolute w-7 h-7 rounded-full bg-red-600 text-white font-bold text-xs border-2 border-white shadow-lg flex items-center justify-center cursor-pointer transition">1</button>
+                            <button onclick="selectHotspot(2)" id="hs-2" style="top: 41%; left: 40%;" class="hotspot-btn absolute w-7 h-7 rounded-full bg-red-600 text-white font-bold text-xs border-2 border-white shadow-lg flex items-center justify-center cursor-pointer transition">2</button>
+                            <button onclick="selectHotspot(3)" id="hs-3" style="top: 41%; left: 63%;" class="hotspot-btn absolute w-7 h-7 rounded-full bg-red-600 text-white font-bold text-xs border-2 border-white shadow-lg flex items-center justify-center cursor-pointer transition">3</button>
+                            <button onclick="selectHotspot(4)" id="hs-4" style="top: 16%; left: 61%;" class="hotspot-btn absolute w-7 h-7 rounded-full bg-red-600 text-white font-bold text-xs border-2 border-white shadow-lg flex items-center justify-center cursor-pointer transition">4</button>
+                            <button onclick="selectHotspot(5)" id="hs-5" style="top: 56%; left: 57%;" class="hotspot-btn absolute w-7 h-7 rounded-full bg-red-600 text-white font-bold text-xs border-2 border-white shadow-lg flex items-center justify-center cursor-pointer transition">5</button>
+                            <button onclick="selectHotspot(6)" id="hs-6" style="top: 45%; left: 49%;" class="hotspot-btn absolute w-7 h-7 rounded-full bg-red-600 text-white font-bold text-xs border-2 border-white shadow-lg flex items-center justify-center cursor-pointer transition">6</button>
+                            <button onclick="selectHotspot(7)" id="hs-7" style="top: 66%; left: 28%;" class="hotspot-btn absolute w-7 h-7 rounded-full bg-red-600 text-white font-bold text-xs border-2 border-white shadow-lg flex items-center justify-center cursor-pointer transition">7</button>
+                        </div>
+
+                        <!-- VISTA ALTERNATIVA C2: MACROFOTOGRAFÍA REAL (IMAGEN3.JPG) + ESQUEMA TÉCNICO -->
+                        <div class="mt-6 bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-4">
+                            <h4 class="text-xs font-bold uppercase text-navy-900 flex items-center justify-between">
+                                <span><i class="fa-solid fa-microscope text-forest-500 mr-1.5"></i>Vista Alternativa (C2): Corte Microestructural y Barrera Hidrofóbica Real</span>
+                                <span class="text-[11px] text-forest-700 font-semibold">Absorción reducida al 8.52%</span>
+                            </h4>
+
+                            <div class="grid sm:grid-cols-12 gap-4 items-center">
+                                <!-- Macrofotografía imagen3.jpg -->
+                                <div class="sm:col-span-6 rounded-xl overflow-hidden border border-slate-300 shadow-sm bg-white">
+                                    <img src="imagen3.jpg" alt="Macrofotografía de Celdas Alveolares de Bagazo y Gotas sobre Barrera Hidrofóbica" class="w-full h-44 object-cover">
+                                    <div class="p-2.5 bg-navy-900 text-white text-[11px]">
+                                        <strong>Macrofotografía de Pared:</strong> Gotas de agua repelidas por la película de almidón de yuca/goma laca sobre la red alveolar tipo panal.
+                                    </div>
+                                </div>
+
+                                <!-- Diagrama SVG de las 3 capas -->
+                                <div class="sm:col-span-6">
+                                    <svg viewBox="0 0 400 185" class="w-full h-auto bg-white rounded-xl border border-slate-200 p-2">
+                                        <rect x="12" y="15" width="376" height="26" rx="4" fill="#27ae60"/>
+                                        <text x="200" y="32" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">CAPA 1: Película Hidrofóbica (Yuca + Goma Laca)</text>
+
+                                        <rect x="12" y="45" width="376" height="85" fill="#e6ccb2" stroke="#9c6644" stroke-width="1.5"/>
+                                        <path d="M 12 87 Q 42 45, 72 87 T 132 87 T 192 87 T 252 87 T 312 87 T 388 87" fill="none" stroke="#7f5539" stroke-width="4"/>
+                                        <path d="M 12 87 Q 42 128, 72 87 T 132 87 T 192 87 T 252 87 T 312 87 T 388 87" fill="none" stroke="#b08968" stroke-width="2.5"/>
+                                        <text x="200" y="91" font-family="Inter, sans-serif" font-size="10.5" font-weight="bold" fill="#3d2516" text-anchor="middle">CAPA 2: Celdas Alveolares (10.6 MPa)</text>
+
+                                        <rect x="12" y="134" width="376" height="26" rx="4" fill="#ddb892" stroke="#7f5539"/>
+                                        <text x="200" y="151" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#1e293b" text-anchor="middle">CAPA 3: Contorno Interno de Precisión (±0.5 mm)</text>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Panel Dinámico de Especificaciones (1 al 7) -->
+                    <div class="lg:col-span-5 space-y-5">
+                        <div id="hotspot-detail-card" class="bg-navy-900 text-white p-6 rounded-2xl shadow-lg border border-navy-800 transition-all">
+                            <div class="flex items-center justify-between mb-3">
+                                <span id="hs-badge" class="bg-forest-500 text-white text-xs font-bold px-3 py-1 rounded-full">Parte Nº 1 Seleccionada</span>
+                                <span class="text-xs text-bagasse-200 font-mono">BIO-MOTOR 1.0</span>
+                            </div>
+                            <h4 id="hs-title" class="text-xl font-display font-bold text-white mb-3">1. Cuerpo de 100% Pulpa de Bagazo Renovable</h4>
+                            <div class="space-y-3 text-xs leading-relaxed">
+                                <div class="bg-white/10 p-3.5 rounded-xl">
+                                    <p class="font-bold text-bagasse-200 uppercase text-[11px] mb-1">¿Para qué le sirve al usuario B2B?</p>
+                                    <p id="hs-benefit" class="text-slate-200">Elimina el uso de plástico (EPS), evita multas ambientales/EPR y garantiza que el empaque sea 100% compostable tras su ciclo logístico.</p>
+                                </div>
+                                <div class="bg-white/10 p-3.5 rounded-xl">
+                                    <p class="font-bold text-forest-400 uppercase text-[11px] mb-1">¿Cómo funciona o de qué está hecha?</p>
+                                    <p id="hs-tech" class="text-slate-200">Elaborado con fibra de bagazo de caña (40-50% celulosa) pulpeada con carbonato/bicarbonato de sodio y deslignificada con oxígeno (rendimiento del 72%).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lista rápida de los 7 botones para fácil acceso -->
+                        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                            <p class="text-xs font-bold text-navy-900 uppercase mb-3">Índice de Componentes del Prototipo:</p>
+                            <div class="grid grid-cols-1 gap-1.5 text-xs">
+                                <button onclick="selectHotspot(1)" class="text-left px-3 py-2 rounded-lg hover:bg-white border border-transparent hover:border-slate-200 font-medium flex items-center justify-between transition">
+                                    <span><strong class="text-forest-700 mr-1.5">1.</strong> 100% Pulpa de Bagazo Renovable</span>
+                                    <i class="fa-solid fa-chevron-right text-slate-400 text-[10px]"></i>
+                                </button>
+                                <button onclick="selectHotspot(2)" class="text-left px-3 py-2 rounded-lg hover:bg-white border border-transparent hover:border-slate-200 font-medium flex items-center justify-between transition">
+                                    <span><strong class="text-forest-700 mr-1.5">2.</strong> Ajuste de Contorno de Precisión (±0.5 mm)</span>
+                                    <i class="fa-solid fa-chevron-right text-slate-400 text-[10px]"></i>
+                                </button>
+                                <button onclick="selectHotspot(3)" class="text-left px-3 py-2 rounded-lg hover:bg-white border border-transparent hover:border-slate-200 font-medium flex items-center justify-between transition">
+                                    <span><strong class="text-forest-700 mr-1.5">3.</strong> Matriz Protectora Bio-Integrada</span>
+                                    <i class="fa-solid fa-chevron-right text-slate-400 text-[10px]"></i>
+                                </button>
+                                <button onclick="selectHotspot(4)" class="text-left px-3 py-2 rounded-lg hover:bg-white border border-transparent hover:border-slate-200 font-medium flex items-center justify-between transition">
+                                    <span><strong class="text-forest-700 mr-1.5">4.</strong> Superficie con Barrera Hidrofóbica</span>
+                                    <i class="fa-solid fa-chevron-right text-slate-400 text-[10px]"></i>
+                                </button>
+                                <button onclick="selectHotspot(5)" class="text-left px-3 py-2 rounded-lg hover:bg-white border border-transparent hover:border-slate-200 font-medium flex items-center justify-between transition">
+                                    <span><strong class="text-forest-700 mr-1.5">5.</strong> Sello en Relieve "BIO-MOTOR 1.0"</span>
+                                    <i class="fa-solid fa-chevron-right text-slate-400 text-[10px]"></i>
+                                </button>
+                                <button onclick="selectHotspot(6)" class="text-left px-3 py-2 rounded-lg hover:bg-white border border-transparent hover:border-slate-200 font-medium flex items-center justify-between transition">
+                                    <span><strong class="text-forest-700 mr-1.5">6.</strong> Cavidad Central de Alta Carga (10.6 MPa)</span>
+                                    <i class="fa-solid fa-chevron-right text-slate-400 text-[10px]"></i>
+                                </button>
+                                <button onclick="selectHotspot(7)" class="text-left px-3 py-2 rounded-lg hover:bg-white border border-transparent hover:border-slate-200 font-medium flex items-center justify-between transition">
+                                    <span><strong class="text-forest-700 mr-1.5">7.</strong> Trazabilidad de Biomasa Excedentaria</span>
+                                    <i class="fa-solid fa-chevron-right text-slate-400 text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Resumen de Presupuesto MVP -->
+                        <div class="bg-forest-50 p-4 rounded-2xl border border-forest-200 flex items-center justify-between">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase text-forest-800">Presupuesto Validado Lote MVP</span>
+                                <p class="text-xs text-slate-600">Incluye matriz CNC, bagazo, yuca, goma laca y ensayos PSI/Cobb.</p>
+                            </div>
+                            <span class="text-xl font-display font-bold text-forest-700 whitespace-nowrap ml-3">Q 4,935.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GALERÍA DE INGENIERÍA DE PROCESOS Y APLICACIÓN LOGÍSTICA B2B (IMAGEN1.JPG E IMAGEN4.JPG) -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Tarjeta Manufactura: imagen1.jpg -->
+                <div class="bg-white rounded-3xl border border-slate-200 shadow-lg overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-64 sm:h-72 bg-slate-900 overflow-hidden">
+                            <img src="imagen1.jpg" alt="Planta de Termocompresión y Matriz CNC de Aluminio en Guatemala" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-navy-900/90 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1 rounded-full border border-white/15">
+                                <i class="fa-solid fa-industry text-forest-400 mr-1"></i>Proceso de Manufactura · Guatemala
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-display text-xl font-bold text-navy-900 mb-2">Termocompresión Industrial y Matriz CNC Bipartita</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Alimentación directa de biomasa excedentaria de caña de azúcar hacia la prensa térmica hidráulica (160 °C – 180 °C) equipada con el <strong>molde bipartito en aluminio mecanizado CNC</strong>, logrando geometrías 3D de alta densidad sin blanqueamiento químico.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 py-3 bg-slate-50 border-t border-slate-200 flex items-center justify-between text-xs font-semibold text-navy-900">
+                        <span><i class="fa-solid fa-temperature-high text-forest-600 mr-1.5"></i>Ciclo Térmico: 160 °C - 180 °C</span>
+                        <span class="text-forest-700">Matriz CNC: Q 2,400.00 (MVP)</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Integración Logística: imagen4.jpg -->
+                <div class="bg-white rounded-3xl border border-slate-200 shadow-lg overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-64 sm:h-72 bg-slate-900 overflow-hidden">
+                            <img src="imagen4.jpg" alt="Validación de Empaque BIO-MOTOR 1.0 en Centro de Distribución y Bodega B2B" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-forest-700/90 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1 rounded-full border border-white/15">
+                                <i class="fa-solid fa-boxes-packing text-bagasse-200 mr-1"></i>Validación en Bodega B2B · Sustitución 1-a-1
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-display text-xl font-bold text-navy-900 mb-2">Integración 1-a-1 en Cadena de Suministro y Paletizado</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                El inserto <strong>BIO-MOTOR 1.0</strong> se acopla con precisión milimétrica dentro de cajas estándar de cartón corrugado sobre tarimas industriales, manteniendo el tiempo de ciclo (<em>Takt time</em>) del operario y soportando apilamiento en bodegas húmedas sin deformación.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 py-3 bg-slate-50 border-t border-slate-200 flex items-center justify-between text-xs font-semibold text-navy-900">
+                        <span><i class="fa-solid fa-shield-check text-forest-600 mr-1.5"></i>Estiba Segura: Hasta 4 metros</span>
+                        <span class="text-forest-700">Cero Mermas en Tránsito</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         SECCIÓN 4: MODELO DE NEGOCIO CANVAS
+         ===================================================================== -->
+    <section id="seccion-4" class="py-16 lg:py-24 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-forest-700 bg-forest-100 px-3 py-1 rounded-full">Sección 4 · Arquitectura Empresarial</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-3">Modelo de Negocio Canvas (v1)</h2>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-1">Los puntos marcados con <strong class="text-forest-700">* (verde)</strong> ya fueron validados con usuarios y literatura técnica en campo.</p>
+                </div>
+                <!-- Filtro Interactivo del Canvas -->
+                <div class="flex flex-wrap gap-2 no-print">
+                    <button onclick="filterCanvas('all')" id="btn-canvas-all" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-navy-900 text-white transition">Todos los Bloques (9)</button>
+                    <button onclick="filterCanvas('validated')" id="btn-canvas-val" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-forest-100 text-forest-800 hover:bg-forest-200 transition">Resaltar Validados en Campo (*)</button>
+                </div>
+            </div>
+
+            <!-- GRILLA DE 5 COLUMNAS ESTÁNDAR DEL BUSINESS MODEL CANVAS -->
+            <div class="grid lg:grid-cols-5 border-2 border-navy-900 rounded-2xl overflow-hidden shadow-xl bg-white">
+                
+                <!-- 8. Alianzas Clave -->
+                <div class="p-5 border-b lg:border-b-2 lg:border-r-2 border-navy-900 flex flex-col justify-between bg-slate-50/50">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold uppercase px-2 py-0.5 bg-navy-900 text-white rounded">8. Alianzas Clave</span>
+                            <i class="fa-solid fa-handshake text-navy-800"></i>
+                        </div>
+                        <p class="text-[11px] italic text-slate-500 mb-3">¿Quiénes son nuestros socios y proveedores clave?</p>
+                        <ul class="space-y-2.5 text-xs">
+                            <li class="canvas-val p-2 rounded-lg bg-forest-50 border border-forest-200 text-forest-900 font-semibold">
+                                <i class="fa-solid fa-circle-check text-forest-500 mr-1"></i>Ingenios azucareros en Escuintla (proveen el 9% de bagazo excedentario).*
+                            </li>
+                            <li class="canvas-val p-2 rounded-lg bg-forest-50 border border-forest-200 text-forest-900 font-semibold">
+                                <i class="fa-solid fa-circle-check text-forest-500 mr-1"></i>Productores locales de yuca (proveen almidón aglutinante hidrofóbico).*
+                            </li>
+                            <li class="canvas-hyp p-2 rounded-lg bg-white border border-slate-200 text-slate-700">
+                                Talleres de mecanizado CNC y proveedores de prensas térmicas.
+                            </li>
+                            <li class="canvas-hyp p-2 rounded-lg bg-white border border-slate-200 text-slate-700">
+                                Entidades certificadoras de compostabilidad (norma ASTM D6400).
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Columna 2: 7. Actividades Clave + 6. Recursos Clave -->
+                <div class="border-b lg:border-b-2 lg:border-r-2 border-navy-900 flex flex-col">
+                    <!-- 7. Actividades Clave -->
+                    <div class="p-5 border-b-2 border-navy-900 flex-1">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold uppercase px-2 py-0.5 bg-navy-900 text-white rounded">7. Actividades Clave</span>
+                            <i class="fa-solid fa-gears text-navy-800"></i>
+                        </div>
+                        <p class="text-[11px] italic text-slate-500 mb-3">¿Qué debemos hacer para entregar valor?</p>
+                        <ul class="space-y-2 text-xs">
+                            <li class="canvas-val p-2 rounded-lg bg-forest-50 border border-forest-200 text-forest-900 font-semibold">
+                                <i class="fa-solid fa-circle-check text-forest-500 mr-1"></i>Pruebas de estrés hídrico (Cobb) y compresión PSI/MPa.*
+                            </li>
+                            <li class="canvas-val p-2 rounded-lg bg-forest-50 border border-forest-200 text-forest-900 font-semibold">
+                                <i class="fa-solid fa-circle-check text-forest-500 mr-1"></i>Pulpeo alcalino y termocompresión 3D de la biomasa.*
+                            </li>
+                            <li class="canvas-hyp p-2 rounded-lg bg-slate-50 border border-slate-200 text-slate-700">
+                                Diseño CAD/CAE de matriz bio-integrada tipo panal.
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 6. Recursos Clave -->
+                    <div class="p-5 flex-1 bg-slate-50/40">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold uppercase px-2 py-0.5 bg-navy-900 text-white rounded">6. Recursos Clave</span>
+                            <i class="fa-solid fa-industry text-navy-800"></i>
+                        </div>
+                        <p class="text-[11px] italic text-slate-500 mb-3">¿Qué activos estratégicos necesitamos?</p>
+                        <ul class="space-y-2 text-xs">
+                            <li class="canvas-val p-2 rounded-lg bg-forest-50 border border-forest-200 text-forest-900 font-semibold">
+                                <i class="fa-solid fa-circle-check text-forest-500 mr-1"></i>Biomasa de bagazo (40-50% celulosa) y almidón de yuca.*
+                            </li>
+                            <li class="canvas-hyp p-2 rounded-lg bg-white border border-slate-200 text-slate-700">
+                                Termoprensas hidráulicas y moldes de aluminio CNC.
+                            </li>
+                            <li class="canvas-hyp p-2 rounded-lg bg-white border border-slate-200 text-slate-700">
+                                Ingeniería de diseño industrial y control de calidad.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2. Propuesta de Valor (Centro) -->
+                <div class="p-5 border-b lg:border-b-2 lg:border-r-2 border-navy-900 bg-gradient-to-b from-forest-50/60 to-white">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase px-2.5 py-1 bg-forest-700 text-white rounded shadow-sm">2. Propuesta de Valor</span>
+                        <i class="fa-solid fa-gem text-forest-600 text-base"></i>
+                    </div>
+                    <p class="text-[11px] italic text-slate-500 mb-3">¿Qué problema resolvemos y qué valor entregamos?</p>
+                    <ul class="space-y-2.5 text-xs">
+                        <li class="canvas-val p-2.5 rounded-xl bg-forest-100/80 border border-forest-300 text-forest-950 font-semibold shadow-sm">
+                            <i class="fa-solid fa-circle-check text-forest-600 mr-1"></i>Empaques B2B 100% compostables que sustituyen en proporción 1-a-1 al poliestireno (EPS/duroport).*
+                        </li>
+                        <li class="canvas-val p-2.5 rounded-xl bg-forest-100/80 border border-forest-300 text-forest-950 font-semibold shadow-sm">
+                            <i class="fa-solid fa-circle-check text-forest-600 mr-1"></i>Igual resistencia estructural (10.6 MPa) y barrera anti-humedad (8.52%), eliminando el miedo a mermas operativas en bodega.*
+                        </li>
+                        <li class="canvas-hyp p-2.5 rounded-xl bg-white border border-slate-200 text-slate-700">
+                            Cumplimiento directo de metas corporativas ESG y normativas EPR.
+                        </li>
+                        <li class="canvas-hyp p-2.5 rounded-xl bg-white border border-slate-200 text-slate-700">
+                            Eliminación del costo de gestión de desechos plásticos para el cliente final.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: 4. Relación con Clientes + 3. Canales -->
+                <div class="border-b lg:border-b-2 lg:border-r-2 border-navy-900 flex flex-col">
+                    <!-- 4. Relación con Clientes -->
+                    <div class="p-5 border-b-2 border-navy-900 flex-1">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold uppercase px-2 py-0.5 bg-navy-900 text-white rounded">4. Relación con Clientes</span>
+                            <i class="fa-solid fa-users-gear text-navy-800"></i>
+                        </div>
+                        <p class="text-[11px] italic text-slate-500 mb-3">¿Cómo conseguimos y mantenemos clientes?</p>
+                        <ul class="space-y-2 text-xs">
+                            <li class="canvas-val p-2 rounded-lg bg-forest-50 border border-forest-200 text-forest-900 font-semibold">
+                                <i class="fa-solid fa-circle-check text-forest-500 mr-1"></i>Venta consultiva B2B con demostraciones técnicas de resistencia.*
+                            </li>
+                            <li class="canvas-hyp p-2 rounded-lg bg-slate-50 border border-slate-200 text-slate-700">
+                                Co-creación de moldes 3D a la medida del equipo del cliente.
+                            </li>
+                            <li class="canvas-hyp p-2 rounded-lg bg-slate-50 border border-slate-200 text-slate-700">
+                                Certificados de impacto ambiental para sus memorias ESG.
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 3. Canales -->
+                    <div class="p-5 flex-1 bg-slate-50/40">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold uppercase px-2 py-0.5 bg-navy-900 text-white rounded">3. Canales</span>
+                            <i class="fa-solid fa-truck-fast text-navy-800"></i>
+                        </div>
+                        <p class="text-[11px] italic text-slate-500 mb-3">¿Por dónde llegamos al cliente B2B?</p>
+                        <ul class="space-y-2 text-xs">
+                            <li class="canvas-val p-2 rounded-lg bg-forest-50 border border-forest-200 text-forest-900 font-semibold">
+                                <i class="fa-solid fa-circle-check text-forest-500 mr-1"></i>Reuniones corporativas presenciales y LinkedIn B2B.*
+                            </li>
+                            <li class="canvas-hyp p-2 rounded-lg bg-white border border-slate-200 text-slate-700">
+                                Pruebas piloto directas en las líneas de empaque del cliente.
+                            </li>
+                            <li class="canvas-hyp p-2 rounded-lg bg-white border border-slate-200 text-slate-700">
+                                Sitio web técnico con SEO industrial y WhatsApp Business.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 1. Segmentos de Clientes -->
+                <div class="p-5 border-b lg:border-b-2 border-navy-900 bg-slate-50/50">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase px-2 py-0.5 bg-navy-900 text-white rounded">1. Segmentos de Clientes</span>
+                        <i class="fa-solid fa-building-user text-navy-800"></i>
+                    </div>
+                    <p class="text-[11px] italic text-slate-500 mb-3">¿Para quién creamos valor? ¿Quién usa y quién paga?</p>
+                    <ul class="space-y-2.5 text-xs">
+                        <li class="canvas-val p-2 rounded-lg bg-forest-50 border border-forest-200 text-forest-900 font-semibold">
+                            <i class="fa-solid fa-circle-check text-forest-500 mr-1"></i>Gerencias de Logística y Operaciones B2B en Retail de Electrónicos y Motores (deciden y pagan).*
+                        </li>
+                        <li class="canvas-val p-2 rounded-lg bg-forest-50 border border-forest-200 text-forest-900 font-semibold">
+                            <i class="fa-solid fa-circle-check text-forest-500 mr-1"></i>Gerencias de Sostenibilidad / RSE (presionan por el cambio).*
+                        </li>
+                        <li class="canvas-hyp p-2 rounded-lg bg-white border border-slate-200 text-slate-700">
+                            Agroexportadoras de productos frágiles de alto valor.
+                        </li>
+                        <li class="canvas-hyp p-2 rounded-lg bg-white border border-slate-200 text-slate-700">
+                            Consumidor final tecnológico (experimenta el <em>unboxing</em> sostenible).
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 9. Estructura de Costos (Inferior Izquierda - 3 columnas en LG) -->
+                <div class="lg:col-span-3 p-5 border-b lg:border-b-0 lg:border-r-2 border-navy-900 bg-slate-50">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase px-2 py-0.5 bg-navy-900 text-white rounded">9. Estructura de Costos</span>
+                        <i class="fa-solid fa-calculator text-navy-800"></i>
+                    </div>
+                    <p class="text-[11px] italic text-slate-500 mb-3">¿Cuáles son los costos fijos y variables más importantes del modelo?</p>
+                    <div class="grid sm:grid-cols-2 gap-2.5 text-xs">
+                        <div class="canvas-val p-2.5 rounded-lg bg-forest-50 border border-forest-200 text-forest-900 font-semibold">
+                            <i class="fa-solid fa-circle-check text-forest-500 mr-1"></i>Costo de oportunidad energética del bagazo excedentario y compra de almidón de yuca (Variable).*
+                        </div>
+                        <div class="canvas-hyp p-2.5 rounded-lg bg-white border border-slate-200 text-slate-700">
+                            <strong>CAPEX:</strong> Adquisición de termoprensas hidráulicas y mecanizado CNC de moldes de aluminio (Fijo).
+                        </div>
+                        <div class="canvas-hyp p-2.5 rounded-lg bg-white border border-slate-200 text-slate-700">
+                            <strong>Ahorro de Proceso:</strong> Eliminación del blanqueamiento químico para reducir OPEX unitario.
+                        </div>
+                        <div class="canvas-hyp p-2.5 rounded-lg bg-white border border-slate-200 text-slate-700">
+                            Logística de transporte de biomasa y certificación internacional ASTM D6400.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Fuentes de Ingreso (Inferior Derecha - 2 columnas en LG) -->
+                <div class="lg:col-span-2 p-5 bg-forest-50/40">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase px-2 py-0.5 bg-forest-700 text-white rounded">5. Fuentes de Ingreso</span>
+                        <i class="fa-solid fa-coins text-forest-700"></i>
+                    </div>
+                    <p class="text-[11px] italic text-slate-500 mb-3">¿Por qué valor pagaría el cliente y cómo?</p>
+                    <ul class="space-y-2 text-xs">
+                        <li class="canvas-val p-2.5 rounded-lg bg-forest-100/80 border border-forest-300 text-forest-950 font-semibold">
+                            <i class="fa-solid fa-circle-check text-forest-600 mr-1"></i>Venta directa B2B por volumen (contratos anuales de lotes de insertos protectores).*
+                        </li>
+                        <li class="canvas-hyp p-2.5 rounded-lg bg-white border border-slate-200 text-slate-700">
+                            Cobro único inicial (<em>Setup Fee</em>) por ingeniería y mecanizado de molde exclusivo.
+                        </li>
+                        <li class="canvas-hyp p-2.5 rounded-lg bg-white border border-slate-200 text-slate-700">
+                            Estrategia de paridad de precios respecto al costo logístico total del poliestireno (EPS).
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         SECCIÓN 5: ESTRATEGIA DE COMUNICACIÓN Y MARKETING (+ LOGO CON FONDO BLANCO.JPG)
+         ===================================================================== -->
+    <section id="seccion-5" class="py-16 lg:py-24 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <span class="text-xs font-bold uppercase tracking-wider text-forest-700 bg-forest-100 px-3 py-1 rounded-full">Sección 5 · Posicionamiento B2B y Marketing Visual</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-3">Estrategia de Comunicación y Marketing</h2>
+                <p class="text-sm text-slate-600 mt-1">Diseñada para vencer el escepticismo técnico y captar Leads empresariales de alto volumen.</p>
+            </div>
+
+            <!-- Los 3 Pilares Solicitados en la Guía: A quién se dirige, Cómo se dará a conocer, Qué medios utilizará -->
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <!-- 1. A quién se dirige -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-navy-900 text-white flex items-center justify-center font-bold">1</div>
+                        <h3 class="text-lg font-bold text-navy-900">¿A quién se dirige?</h3>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        Segmento estrictamente <strong>B2B (Business-to-Business)</strong>: Directores y Gerentes de Cadena de Suministro, Logística, Compras Industriales y Sostenibilidad (RSE), de <strong>35 a 55 años</strong>, ubicados en zonas industriales de Guatemala.
+                    </p>
+                    <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-navy-900 font-medium">
+                        <i class="fa-solid fa-user-check text-forest-500 mr-1.5"></i>Perfil decisor: Ingenieros analíticos que priorizan certificaciones técnicas sobre promesas publicitarias.
+                    </div>
+                </div>
+
+                <!-- 2. Cómo se dará a conocer -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-forest-700 text-white flex items-center justify-center font-bold">2</div>
+                        <h3 class="text-lg font-bold text-navy-900">¿Cómo se dará a conocer?</h3>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        Objetivo principal: <strong>Conseguir clientes potenciales (Generación de Leads B2B)</strong> mediante <em>Marketing de Contenidos Técnico</em>. En lugar de publicidad masiva, publicamos evidencia científica: videos de pruebas de compresión y ensayos de humedad.
+                    </p>
+                    <div class="p-3 rounded-xl bg-forest-50 border border-forest-100 text-xs text-forest-900 font-medium">
+                        <i class="fa-solid fa-flask text-forest-600 mr-1.5"></i>Conversión: Invitación a agendar una demostración técnica gratuita en la línea de empaque del cliente.
+                    </div>
+                </div>
+
+                <!-- 3. Qué medios utilizará -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-bagasse-600 text-white flex items-center justify-center font-bold">3</div>
+                        <h3 class="text-lg font-bold text-navy-900">¿Qué medios utilizará?</h3>
+                    </div>
+                    <ul class="space-y-2.5 text-xs text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-brands fa-linkedin text-blue-700 text-base mt-0.5"></i>
+                            <span><strong>LinkedIn (Canal Estrella):</strong> Networking directo con gerentes logísticos y difusión de estudios de caso B2B.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-globe text-navy-800 text-base mt-0.5"></i>
+                            <span><strong>Página Web con SEO Técnico:</strong> Posicionamiento en Google con fichas de resistencia (MPa/ASTM) y formulario de Leads.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-brands fa-whatsapp text-forest-500 text-base mt-0.5"></i>
+                            <span><strong>WhatsApp Business y Email Marketing:</strong> Seguimiento ágil de cotizaciones de lotes y envío de reportes ESG.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Identidad Visual (Con logo con fondo blanco.jpg) & Mockup de Publicación de Lanzamiento en LinkedIn -->
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
+                <!-- Columna Izquierda: Identidad Visual Oficial y Plan de Contenidos -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                        <h3 class="text-base font-bold text-navy-900 mb-3"><i class="fa-solid fa-palette text-forest-500 mr-2"></i>Identidad Visual Corporativa y Logotipo Oficial</h3>
+                        
+                        <div class="grid sm:grid-cols-12 gap-4 items-center mb-4">
+                            <div class="sm:col-span-5 bg-white border border-slate-200 rounded-xl p-3 flex items-center justify-center shadow-inner">
+                                <img src="logo con fondo blanco.jpg" alt="Logotipo Oficial Eco-Bagazo" class="max-h-36 w-auto object-contain rounded-lg">
+                            </div>
+                            <div class="sm:col-span-7 text-xs text-slate-600 space-y-2 leading-relaxed">
+                                <p>
+                                    <strong>Eslogan:</strong> <em>"Protección industrial. Evolución circular."</em>
+                                </p>
+                                <p>
+                                    El isotipo hexagonal integra la <strong>celda estructural de panal</strong>, la <strong>chimenea industrial B2B</strong>, la <strong>textura de fibra de bagazo</strong> y la <strong>hoja de caña de azúcar</strong> envolvente.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-4 gap-3 text-center text-[11px] font-semibold">
+                            <div>
+                                <div class="h-10 rounded-xl bg-forest-700 shadow-inner mb-1"></div>
+                                <span class="text-slate-700">Verde Bosque</span>
+                                <span class="block text-[10px] text-slate-400">#1E5631</span>
+                            </div>
+                            <div>
+                                <div class="h-10 rounded-xl bg-navy-900 shadow-inner mb-1"></div>
+                                <span class="text-slate-700">Azul Industrial</span>
+                                <span class="block text-[10px] text-slate-400">#0F2C59</span>
+                            </div>
+                            <div>
+                                <div class="h-10 rounded-xl bg-slate-700 shadow-inner mb-1"></div>
+                                <span class="text-slate-700">Gris Acero</span>
+                                <span class="block text-[10px] text-slate-400">#334155</span>
+                            </div>
+                            <div>
+                                <div class="h-10 rounded-xl bg-bagasse-400 shadow-inner mb-1"></div>
+                                <span class="text-slate-700">Fibra Bagazo</span>
+                                <span class="block text-[10px] text-slate-400">#D4A373</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tabla Plan Básico de Contenidos -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                        <h3 class="text-base font-bold text-navy-900 mb-3"><i class="fa-solid fa-calendar-check text-forest-500 mr-2"></i>Plan Estratégico de Contenidos (LinkedIn B2B)</h3>
+                        <div class="space-y-3 text-xs">
+                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                                <span class="font-bold text-navy-900">1. Contenido Educativo:</span>
+                                <p class="text-slate-600 mt-0.5"><em>"Infografía: El costo oculto logístico del EPS vs. La Economía Circular del Bagazo de Caña en Guatemala"</em> (Objetivo: Posicionar autoridad técnica).</p>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                                <span class="font-bold text-forest-700">2. Contenido Informativo:</span>
+                                <p class="text-slate-600 mt-0.5"><em>"Estudio de Caso en Video: Prueba de compresión 10.6 MPa y estrés hídrico de BIO-MOTOR 1.0"</em> (Objetivo: Derribar la aversión a la pérdida del cliente).</p>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                                <span class="font-bold text-bagasse-600">3. Contenido Promocional:</span>
+                                <p class="text-slate-600 mt-0.5"><em>"Agenda una demostración técnica gratuita en tu línea de empaque"</em> (Objetivo: Conversión directa de Leads B2B).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Mockup de la Publicación de Lanzamiento en LinkedIn -->
+                <div class="lg:col-span-6">
+                    <div class="bg-white rounded-2xl border border-slate-300 shadow-lg overflow-hidden max-w-lg mx-auto">
+                        <!-- Cabecera LinkedIn -->
+                        <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+                            <div class="flex items-center gap-3">
+                                <img src="logo con fondo blanco.jpg" alt="Eco-Bagazo" class="w-10 h-10 rounded-lg object-contain border border-slate-200 bg-white p-0.5">
+                                <div>
+                                    <h4 class="text-xs font-bold text-slate-900 flex items-center gap-1">
+                                        Eco-Bagazo Industrial Guatemala
+                                        <i class="fa-brands fa-linkedin text-blue-600"></i>
+                                    </h4>
+                                    <p class="text-[10px] text-slate-500">Ingeniería de Empaques B2B · Publicación de Lanzamiento</p>
+                                </div>
+                            </div>
+                            <span class="text-[10px] font-semibold bg-blue-50 text-blue-700 px-2 py-0.5 rounded">Promocionado B2B</span>
+                        </div>
+
+                        <!-- Cuerpo del Post -->
+                        <div class="p-5 text-xs text-slate-800 space-y-3 leading-relaxed">
+                            <p class="font-bold text-sm text-navy-900">
+                                ¿Sabías que el 40% de los residuos plásticos mundiales provienen de los empaques de un solo uso? ♻️📦 Es momento de que la industria evolucione.
+                            </p>
+                            <p>
+                                Hoy nace oficialmente <strong>Eco-Bagazo</strong>, la solución de ingeniería en materiales desarrollada para el sector B2B en Guatemala. Fabricamos insertos protectores termo-moldeados a partir de biomasa de caña de azúcar que sustituyen al duroport (EPS) en proporción estructural 1 a 1:
+                            </p>
+                            <ul class="space-y-1 font-medium text-slate-700 pl-1">
+                                <li>✅ <strong>Resistencia comprobada (10.6 MPa):</strong> Diseño en Matriz Bio-Integrada.</li>
+                                <li>✅ <strong>Barrera natural contra humedad (8.52%):</strong> Sellado con almidón de yuca.</li>
+                                <li>✅ <strong>100% Compostable:</strong> Cumple tus metas corporativas ESG sin riesgo de mermas.</li>
+                            </ul>
+                            <p class="text-navy-900 font-semibold">
+                                👇 Si eres Director de Logística o Sostenibilidad, solicita hoy una prueba piloto gratuita en tu línea de empaque.
+                            </p>
+                            <p class="text-blue-600 font-medium text-[11px]">
+                                #EcoBagazo #SostenibilidadB2B #LogisticaVerde #IngenieriaIndustrial #EconomiaCircular
+                            </p>
+                        </div>
+
+                        <!-- Imagen Visual del Post en LinkedIn (imagen4.jpg) -->
+                        <div class="relative h-48 bg-slate-900 overflow-hidden border-t border-slate-200">
+                            <img src="imagen4.jpg" alt="BIO-MOTOR 1.0 en Bodega Logística" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent flex items-end justify-between p-4 text-white">
+                                <div>
+                                    <span class="text-[10px] uppercase tracking-wider text-bagasse-200 font-bold">Lanzamiento Oficial BIO-MOTOR 1.0</span>
+                                    <h5 class="font-display font-bold text-sm">Protección industrial. Evolución circular.</h5>
+                                </div>
+                                <a href="#seccion-6" class="bg-forest-500 hover:bg-forest-600 text-white text-xs font-bold px-3.5 py-2 rounded-lg transition whitespace-nowrap">
+                                    Solicitar Piloto
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Barra de Interacción LinkedIn -->
+                        <div class="px-5 py-2.5 bg-slate-50 border-t border-slate-200 flex justify-around text-xs text-slate-500 font-semibold">
+                            <span><i class="fa-regular fa-thumbs-up mr-1"></i>Recomendar (148)</span>
+                            <span><i class="fa-regular fa-comment mr-1"></i>Comentar (34)</span>
+                            <span><i class="fa-solid fa-share mr-1"></i>Compartir</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         SECCIÓN 6: PITCH EN VIDEO (Eco-Bagazo_Pitch_Empresarial.mp4)
+         ===================================================================== -->
+    <section id="seccion-6" class="py-16 lg:py-24 bg-navy-950 text-white border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-forest-400 bg-forest-500/20 border border-forest-500/30 px-3 py-1 rounded-full">Sección 6 · Presentación Ejecutiva</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-3">Pitch en Video: Eco-Bagazo</h2>
+                    <p class="text-xs sm:text-sm text-slate-300 mt-1">Reproductor oficial con el archivo <strong>Eco-Bagazo_Pitch_Empresarial.mp4</strong> incrustado + Guion Estructurado.</p>
+                </div>
+
+                <!-- Controles para alternar entre el Video MP4 Oficial, Simulador o URL -->
+                <div class="flex flex-wrap gap-2 no-print">
+                    <button onclick="showOfficialVideo()" class="bg-forest-500 hover:bg-forest-600 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition flex items-center gap-2">
+                        <i class="fa-solid fa-circle-play"></i>
+                        <span>Video Oficial (.mp4)</span>
+                    </button>
+                    <button onclick="showInteractiveDeck()" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition flex items-center gap-2">
+                        <i class="fa-solid fa-tv text-bagasse-200"></i>
+                        <span>Simulador de Diapositivas</span>
+                    </button>
+                    <label class="bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-bold px-3.5 py-2.5 rounded-xl cursor-pointer transition flex items-center gap-2">
+                        <i class="fa-solid fa-upload"></i>
+                        <span>Cambiar .mp4</span>
+                        <input type="file" accept="video/*" class="hidden" onchange="loadLocalPitchVideo(event)">
+                    </label>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                <!-- Columna Izquierda (7 cols): Reproductor 16:9 Incrustado con Eco-Bagazo_Pitch_Empresarial.mp4 -->
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="relative aspect-video rounded-2xl overflow-hidden border-2 border-forest-500/50 bg-black shadow-2xl">
+                        
+                        <!-- 1. Reproductor de Video HTML5 Principal (Activo por defecto con Eco-Bagazo_Pitch_Empresarial.mp4) -->
+                        <video id="html5-pitch-video" controls preload="metadata" poster="prototipo_4.jpg" class="w-full h-full object-contain bg-black">
+                            <source src="Eco-Bagazo_Pitch_Empresarial.mp4" type="video/mp4">
+                            Tu navegador no soporta reproducción de video HTML5.
+                        </video>
+
+                        <!-- 2. Iframe para YouTube / Vimeo / Drive (Opcional) -->
+                        <iframe id="iframe-pitch-video" class="hidden w-full h-full" src="" title="Eco-Bagazo Pitch Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        <!-- 3. Presentación Interactiva Animada del Pitch (Modo Alternativo) -->
+                        <div id="interactive-pitch-deck" class="hidden w-full h-full flex flex-col justify-between p-6 sm:p-10 bg-gradient-to-br from-navy-900 via-navy-950 to-forest-900 relative">
+                            <div class="flex items-center justify-between border-b border-white/15 pb-3">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></span>
+                                    <span id="pitch-slide-tag" class="text-xs font-bold uppercase tracking-wider text-bagasse-200">SLIDE 1/5 · GANCHO Y PROBLEMA (0:00 - 0:50)</span>
+                                </div>
+                                <span id="pitch-timer-display" class="font-mono text-sm font-bold bg-black/40 px-3 py-1 rounded-lg text-forest-400 border border-forest-500/30">00:00 / 04:30</span>
+                            </div>
+
+                            <!-- Contenido Dinámico de la Diapositiva del Pitch -->
+                            <div class="my-auto py-4">
+                                <h3 id="pitch-slide-title" class="font-display text-2xl sm:text-3xl font-bold text-white mb-3">
+                                    El Dilema del Director de Logística: ¿Sostenibilidad o Mermas?
+                                </h3>
+                                <p id="pitch-slide-body" class="text-sm sm:text-base text-slate-200 leading-relaxed">
+                                    "Cada año, el 40% de los residuos plásticos proviene de empaques. En Guatemala, los gerentes de logística B2B quieren eliminar el duroport (EPS) de sus motores y electrodomésticos para cumplir metas ESG, pero tienen pánico a que un empaque ecológico absorba humedad tropical y destruya mercancía de miles de dólares."
+                                </p>
+                                <div id="pitch-slide-kpis" class="grid grid-cols-3 gap-3 mt-6">
+                                    <div class="bg-white/10 p-3 rounded-xl border border-white/10 text-center">
+                                        <span class="text-lg sm:text-xl font-bold text-forest-400">10.6 MPa</span>
+                                        <span class="block text-[10px] text-slate-300">Tensión Deslignificada</span>
+                                    </div>
+                                    <div class="bg-white/10 p-3 rounded-xl border border-white/10 text-center">
+                                        <span class="text-lg sm:text-xl font-bold text-bagasse-200">8.52%</span>
+                                        <span class="block text-[10px] text-slate-300">Barrera Almidón Yuca</span>
+                                    </div>
+                                    <div class="bg-white/10 p-3 rounded-xl border border-white/10 text-center">
+                                        <span class="text-lg sm:text-xl font-bold text-white">Q 4,935</span>
+                                        <span class="block text-[10px] text-slate-300">Presupuesto MVP</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Controles del Simulador de Pitch -->
+                            <div class="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-white/15">
+                                <div class="flex items-center gap-2">
+                                    <button onclick="togglePitchPresentation()" id="pitch-play-btn" class="bg-forest-500 hover:bg-forest-600 text-white text-xs font-bold px-4 py-2 rounded-xl flex items-center gap-2 transition">
+                                        <i class="fa-solid fa-play"></i>
+                                        <span>Iniciar Pitch Guiado (4:30 min)</span>
+                                    </button>
+                                    <button onclick="resetPitchPresentation()" class="bg-white/10 hover:bg-white/20 text-white text-xs px-3 py-2 rounded-xl transition" title="Reiniciar">
+                                        <i class="fa-solid fa-rotate-left"></i>
+                                    </button>
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <button onclick="setPitchSlide(0)" class="pitch-dot w-7 h-7 rounded-lg bg-forest-500 text-white text-xs font-bold">1</button>
+                                    <button onclick="setPitchSlide(1)" class="pitch-dot w-7 h-7 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-bold">2</button>
+                                    <button onclick="setPitchSlide(2)" class="pitch-dot w-7 h-7 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-bold">3</button>
+                                    <button onclick="setPitchSlide(3)" class="pitch-dot w-7 h-7 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-bold">4</button>
+                                    <button onclick="setPitchSlide(4)" class="pitch-dot w-7 h-7 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-bold">5</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Barra de estado del archivo de video -->
+                    <div class="bg-white/5 border border-white/10 px-4 py-2.5 rounded-xl flex flex-wrap items-center justify-between gap-2 text-xs text-slate-300">
+                        <span class="flex items-center gap-2">
+                            <i class="fa-solid fa-film text-forest-400"></i>
+                            <span>Archivo vinculado: <strong class="text-white font-mono">Eco-Bagazo_Pitch_Empresarial.mp4</strong></span>
+                        </span>
+                        <span class="text-bagasse-200 font-semibold">Duración Máxima Cumplida (&le; 5:00 min)</span>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha (5 cols): Guion Organizado del Pitch (Estructura del Curso) -->
+                <div class="lg:col-span-5 bg-white/5 backdrop-blur-sm border border-white/15 rounded-2xl p-6 max-h-[460px] overflow-y-auto">
+                    <div class="flex items-center justify-between mb-4 sticky top-0 bg-navy-950/90 py-2 border-b border-white/10">
+                        <div>
+                            <h3 class="text-base font-display font-bold text-white"><i class="fa-solid fa-scroll text-bagasse-400 mr-2"></i>Guion Estructurado del Pitch</h3>
+                            <p class="text-[11px] text-slate-400">Síntesis narrativa de la presentación oficial en video</p>
+                        </div>
+                        <span class="text-[11px] bg-forest-500/20 text-forest-400 px-2.5 py-1 rounded-full font-semibold">5 Bloques</span>
+                    </div>
+
+                    <div class="space-y-4 text-xs leading-relaxed">
+                        <div onclick="setPitchSlide(0)" class="p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 cursor-pointer transition">
+                            <div class="flex justify-between font-bold text-bagasse-200 mb-1">
+                                <span>1. Gancho y Problema Real</span>
+                                <span>0:00 - 0:50</span>
+                            </div>
+                            <p class="text-slate-300">
+                                "Hola, soy Christian Gonzalez, futuro Ingeniero Industrial de la Universidad Da Vinci. ¿Sabían que el 40% del plástico mundial son empaques de un solo uso? En Guatemala, empresas que transportan motores y electrónica quieren eliminar el duroport (EPS) para cumplir metas ESG, pero nuestro trabajo de campo reveló su mayor dolor: pánico operativo a que un empaque ecológico absorba humedad en bodega y arruine equipos costosos."
+                            </p>
+                        </div>
+
+                        <div onclick="setPitchSlide(1)" class="p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 cursor-pointer transition">
+                            <div class="flex justify-between font-bold text-forest-400 mb-1">
+                                <span>2. Solución, Insight y Propuesta de Valor</span>
+                                <span>0:50 - 1:45</span>
+                            </div>
+                            <p class="text-slate-300">
+                                "Para resolver esa aversión a la pérdida creamos <strong>Eco-Bagazo</strong>. Transformamos el bagazo de caña excedentario de la Costa Sur en insertos termo-comprimidos que sustituyen 1-a-1 al duroport. Al deslignificar la fibra con oxígeno logramos <strong>10.6 MPa</strong> de resistencia a la tensión, y al sellarla con almidón de yuca y goma laca reducimos la absorción de humedad de 22.36% a solo <strong>8.52%</strong>."
+                            </p>
+                        </div>
+
+                        <div onclick="setPitchSlide(2)" class="p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 cursor-pointer transition">
+                            <div class="flex justify-between font-bold text-bagasse-200 mb-1">
+                                <span>3. Prototipo BIO-MOTOR 1.0</span>
+                                <span>1:45 - 2:45</span>
+                            </div>
+                            <p class="text-slate-300">
+                                "Nuestro prototipo <strong>BIO-MOTOR 1.0</strong> incorpora una Matriz Protectora Bio-Integrada con nervaduras tipo panal de abejas que disipan impactos y ofrecen un ajuste de contorno de precisión (±0.5 mm) sin alterar el <em>Takt time</em> en la línea de empaque. Además, eliminamos el blanqueamiento químico para reducir costos y comunicar autenticidad ecológica."
+                            </p>
+                        </div>
+
+                        <div onclick="setPitchSlide(3)" class="p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 cursor-pointer transition">
+                            <div class="flex justify-between font-bold text-forest-400 mb-1">
+                                <span>4. Modelo de Negocio B2B y Marketing</span>
+                                <span>2:45 - 3:40</span>
+                            </div>
+                            <p class="text-slate-300">
+                                "Descubrimos en campo que el 91% del bagazo en Guatemala se usa para cogeneración eléctrica; por eso nuestro modelo B2B asegura alianzas sobre el 9% excedentario. Vendemos por contratos de volumen más un <em>Setup Fee</em> por molde exclusivo, captando clientes mediante LinkedIn B2B y pruebas de caída (Drop-test) en sus propias bodegas."
+                            </p>
+                        </div>
+
+                        <div onclick="setPitchSlide(4)" class="p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 cursor-pointer transition">
+                            <div class="flex justify-between font-bold text-bagasse-200 mb-1">
+                                <span>5. Viabilidad y Llamado a la Acción</span>
+                                <span>3:40 - 4:30</span>
+                            </div>
+                            <p class="text-slate-300">
+                                "Con un presupuesto MVP validado de Q 4,935.00 para matricería CNC y pruebas de laboratorio, Eco-Bagazo demuestra que la ingeniería industrial guatemalteca puede unir rentabilidad y economía circular. Los invito a agendar una prueba piloto: <em>Eco-Bagazo, protección industrial, evolución circular.</em>"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         SECCIÓN 7: CONCLUSIONES
+         ===================================================================== -->
+    <section id="seccion-7" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <span class="text-xs font-bold uppercase tracking-wider text-forest-700 bg-forest-100 px-3 py-1 rounded-full">Sección 7 · Evaluación Crítica e Ingeniería</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-navy-900 mt-3">Conclusiones del Proyecto Empresarial</h2>
+                <p class="text-sm text-slate-600 mt-1">Síntesis de hallazgos empíricos, triple viabilidad, aprendizajes metodológicos y hoja de ruta.</p>
+            </div>
+
+            <!-- 1. Principales Hallazgos -->
+            <div class="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 mb-10">
+                <h3 class="text-xl font-display font-bold text-navy-900 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-magnifying-glass-chart text-forest-600"></i>
+                    <span>1. Principales Hallazgos del Proceso de Validación</span>
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                        <h4 class="font-bold text-navy-900 mb-1.5">Hallazgo en Cadena de Suministro (El mito de la "basura gratis"):</h4>
+                        <p>
+                            Nuestra suposición inicial era que el bagazo de caña era un residuo sin costo. La investigación demostró que en Guatemala cerca del <strong>91% del bagazo se destina a cogeneración eléctrica</strong> en los ingenios. Esto nos obligó a pivotar la estructura de costos para negociar exclusivamente sobre la fracción excedentaria (9%), reconociendo su costo de oportunidad energético.
+                        </p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                        <h4 class="font-bold text-navy-900 mb-1.5">Hallazgo en Comportamiento B2B (Aversión a la pérdida):</h4>
+                        <p>
+                            Confirmamos que ningún gerente de logística cambiará el poliestireno (EPS) únicamente por altruismo ecológico. La decisión de compra B2B solo se desbloquea cuando se demuestra científicamente que la barrera hidrofóbica (almidón de yuca al 8.52%) y la estructura en panal (10.6 MPa) garantizan <strong>cero mermas en bodegas húmedas</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Viabilidad del Proyecto (Comercial, Técnica y Operativa) -->
+            <h3 class="text-xl font-display font-bold text-navy-900 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-scale-balanced text-forest-600"></i>
+                <span>2. Análisis de Viabilidad Integral</span>
+            </h3>
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <!-- Viabilidad Comercial -->
+                <div class="bg-gradient-to-b from-white to-slate-50 p-6 rounded-2xl border-2 border-forest-500/30 shadow-sm">
+                    <span class="text-xs font-bold uppercase text-forest-700 bg-forest-100 px-2.5 py-1 rounded-md">Viabilidad Comercial: ALTA</span>
+                    <h4 class="text-lg font-bold text-navy-900 mt-3 mb-2">Demanda Corporativa ESG</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Existe una presión real y creciente sobre las empresas de retail electrónico y manufactura para eliminar plásticos de un solo uso (metas ESG y regulaciones EPR). Al ofrecer paridad de costo logístico y venta consultiva por lotes B2B, el mercado objetivo tiene presupuesto y urgencia para adoptar Eco-Bagazo.
+                    </p>
+                </div>
+
+                <!-- Viabilidad Técnica -->
+                <div class="bg-gradient-to-b from-white to-slate-50 p-6 rounded-2xl border-2 border-navy-800/30 shadow-sm">
+                    <span class="text-xs font-bold uppercase text-navy-900 bg-blue-100 px-2.5 py-1 rounded-md">Viabilidad Técnica: COMPROBADA</span>
+                    <h4 class="text-lg font-bold text-navy-900 mt-3 mb-2">Resistencia e Hidrofobicidad</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Respaldada por literatura arbitrada (<em>BioResources, 2025</em>): el pulpeo alcalino y deslignificación con oxígeno logra un rendimiento del 72% y una resistencia a la tensión de <strong>10.6 MPa (+25%)</strong>, mientras que el aglutinante de almidón de yuca y goma laca reduce la absorción hídrica al <strong>8.52%</strong>.
+                    </p>
+                </div>
+
+                <!-- Viabilidad Operativa -->
+                <div class="bg-gradient-to-b from-white to-slate-50 p-6 rounded-2xl border-2 border-bagasse-600/30 shadow-sm">
+                    <span class="text-xs font-bold uppercase text-bagasse-600 bg-bagasse-100 px-2.5 py-1 rounded-md">Viabilidad Operativa: EFICIENTE</span>
+                    <h4 class="text-lg font-bold text-navy-900 mt-3 mb-2">Integración 1-a-1 sin Fricción</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Al eliminar el proceso de blanqueamiento químico mediante metodología SCAMPER, simplificamos la línea de producción y reducimos el OPEX. Para el cliente, el inserto BIO-MOTOR 1.0 encaja con tolerancia milimétrica sin alterar el tiempo de ciclo (<em>Takt time</em>) de sus operarios de bodega.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 3. Aprendizajes Obtenidos y 4. Proyecciones Futuras -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-navy-900 text-white p-6 sm:p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-lg font-display font-bold text-bagasse-200 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>3. Aprendizajes Obtenidos en el Curso</span>
+                    </h3>
+                    <ul class="space-y-3 text-xs sm:text-sm text-slate-200 leading-relaxed">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-forest-400 mt-1"></i>
+                            <span><strong>De la intuición a la evidencia:</strong> Aprendí que la primera idea es solo una hipótesis. Salir a escuchar al usuario mediante Design Thinking permitió descubrir objeciones técnicas reales (humedad y suministro del bagazo) antes de invertir capital.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-forest-400 mt-1"></i>
+                            <span><strong>Prototipado como herramienta de decisión:</strong> Construir la ficha técnica y el presupuesto del MVP (Q 4,935.00) aterrizó la ingeniería conceptual en requerimientos tangibles de matricería CNC y ensayos de materiales.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-forest-400 mt-1"></i>
+                            <span><strong>Comunicación técnica B2B:</strong> Comprendí que en mercados industriales el marketing digital efectivo no busca compras impulsivas, sino construir credibilidad mediante datos para generar Leads cualificados.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-forest-800 text-white p-6 sm:p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-lg font-display font-bold text-bagasse-200 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-rocket"></i>
+                        <span>4. Proyecciones Futuras (Hoja de Ruta)</span>
+                    </h3>
+                    <ul class="space-y-3 text-xs sm:text-sm text-slate-100 leading-relaxed">
+                        <li class="flex items-start gap-2.5">
+                            <span class="bg-white/20 text-white font-bold text-xs px-2 py-0.5 rounded">Fase 1</span>
+                            <span><strong>Fabricación del Lote MVP y Ensayos (Corto Plazo):</strong> Mecanizar el molde CNC de aluminio y ejecutar las pruebas certificadas de compresión PSI, caída libre (<em>Drop-test</em>) y absorción Cobb en laboratorio universitario.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="bg-white/20 text-white font-bold text-xs px-2 py-0.5 rounded">Fase 2</span>
+                            <span><strong>Piloto Comercial y Certificación ASTM D6400 (Mediano Plazo):</strong> Implementar un lote piloto de 500 unidades BIO-MOTOR 1.0 con una empresa distribuidora de equipos eléctricos y tramitar el sello internacional de compostabilidad.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="bg-white/20 text-white font-bold text-xs px-2 py-0.5 rounded">Fase 3</span>
+                            <span><strong>Escalamiento Industrial Regional (Largo Plazo):</strong> Instalar una planta de termocompresión modular en Escuintla cercana a los ingenios y expandir la línea hacia agroexportación de productos frágiles en Centroamérica.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         FOOTER CORPORATIVO Y LISTA DE VERIFICACIÓN ACADÉMICA UDV
+         ===================================================================== -->
+    <footer class="bg-navy-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-8 pb-8 border-b border-slate-800">
+                <div class="md:col-span-5 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-xl bg-white p-1 flex items-center justify-center">
+                            <img src="Logo sin fondo.png" alt="Logo Eco-Bagazo" class="w-full h-full object-contain">
+                        </div>
+                        <span class="font-display font-bold text-lg text-white">ECO-BAGAZO GUATEMALA</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+                        Proyecto Empresarial de Ingeniería Industrial · Universidad Da Vinci de Guatemala. Facultad de Ingeniería, Industria y Tecnología.
+                    </p>
+                    <p class="text-xs text-bagasse-200 font-medium">
+                        "Protección industrial. Evolución circular."
+                    </p>
+                </div>
+
+                <!-- Lista de Verificación de la Guía (Página 4 del PDF) -->
+                <div class="md:col-span-7 bg-white/5 p-5 rounded-2xl border border-white/10">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-forest-400"></i>
+                        <span>Lista de Verificación Oficial Cumplida (Guía UDV)</span>
+                    </h4>
+                    <div class="grid sm:grid-cols-2 gap-2 text-xs text-slate-300">
+                        <div><i class="fa-solid fa-square-check text-forest-400 mr-1.5"></i>Accesible sin iniciar sesión (100% público)</div>
+                        <div><i class="fa-solid fa-square-check text-forest-400 mr-1.5"></i>El Canvas es legible e interactivo</div>
+                        <div><i class="fa-solid fa-square-check text-forest-400 mr-1.5"></i>Diseño responsivo (Computadora y Celular)</div>
+                        <div><i class="fa-solid fa-square-check text-forest-400 mr-1.5"></i>Pitch de máx. 5 minutos incrustado con guion</div>
+                        <div><i class="fa-solid fa-square-check text-forest-400 mr-1.5"></i>Usa logo y colores de Eco-Bagazo</div>
+                        <div><i class="fa-solid fa-square-check text-forest-400 mr-1.5"></i>Datos de la Sección 2 citan su fuente</div>
+                        <div><i class="fa-solid fa-square-check text-forest-400 mr-1.5"></i>Incluye las 7 secciones en el orden indicado</div>
+                        <div><i class="fa-solid fa-square-check text-forest-400 mr-1.5"></i>Ortografía verificada y sin enlaces rotos</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-wrap justify-between items-center text-xs gap-4">
+                <p>© 2026 Eco-Bagazo · Desarrollado por <strong>Christian Gonzalez</strong></p>
+                <p>Catedrático: <strong>Ing. Henry Fernando Martínez Herrera</strong> · Curso de Emprendimiento</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         MODAL INTERACTIVO: RÚBRICA DEL PROFESIONAL EXTERNO / CATEDRÁTICO (10 PTS)
+         ===================================================================== -->
+    <div id="rubric-modal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white text-slate-800 rounded-3xl max-w-3xl w-full shadow-2xl border border-slate-200 overflow-hidden my-8">
+            <div class="bg-navy-900 text-white px-6 py-4 flex items-center justify-between">
+                <div>
+                    <span class="text-[10px] uppercase tracking-wider font-bold text-bagasse-200">Universidad Da Vinci de Guatemala · Facultad de Ingeniería</span>
+                    <h3 class="text-lg font-display font-bold">Rúbrica Interactiva del Profesional Externo (10 Puntos)</h3>
+                </div>
+                <button onclick="toggleRubricModal()" class="text-slate-300 hover:text-white text-xl leading-none">&times;</button>
+            </div>
+
+            <div class="p-6 space-y-5 max-h-[80vh] overflow-y-auto text-xs">
+                <p class="text-slate-600">
+                    Herramienta integrada para facilitar la calificación del sitio web según los 5 criterios oficiales de la guía académica (2 puntos por criterio).
+                </p>
+
+                <!-- Tabla de los 5 Criterios -->
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse border border-slate-300 text-left">
+                        <thead>
+                            <tr class="bg-slate-100 text-navy-900">
+                                <th class="p-2.5 border border-slate-300">Criterio Evaluado</th>
+                                <th class="p-2.5 border border-slate-300 text-center">Sobresaliente (2 pts)</th>
+                                <th class="p-2.5 border border-slate-300 text-center">Aceptable (1 pt)</th>
+                                <th class="p-2.5 border border-slate-300 text-center">Insuficiente (0 pts)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="p-2.5 border border-slate-300 font-semibold">1. Problema y propuesta de valor</td>
+                                <td class="p-2.5 border border-slate-300 text-center"><input type="radio" name="crit1" value="2" checked onchange="calcRubric()"></td>
+                                <td class="p-2.5 border border-slate-300 text-center"><input type="radio" name="crit1" value="1" onchange="calcRubric()"></td>
+                                <td class="p-2.5 border border-slate-300 text-center"><input type="radio" name="crit1" value="0" onchange="calcRubric()"></td>
+                            </tr>
+                            <tr>
+                                <td class="p-2.5 border border-slate-300 font-semibold">2. Modelo de negocio Canvas</td>
+                                <td class="p-2.5 border border-slate-300 text-center"><input type="radio" name="crit2" value="2" checked onchange="calcRubric()"></td>
+                                <td class="p-2.5 border border-slate-300 text-center"><input type="radio" name="crit2" value="1" onchange="calcRubric()"></td>
+                                <td class="p-2.5 border border-slate-300 text-center"><input type="radio" name="crit2" value="0" onchange="calcRubric()"></td>
+                            </tr>
+                            <tr>
+                                <td class="p-2.5 border border-slate-300 font-semibold">3. Comunicación y marketing</td>
+                                <td class="p-2.5 border border-slate-300 text-center"><input type="radio" name="crit3" value="2" checked onchange="calcRubric()"></td>
+                                <td class="p-2.5 border border-slate-300 text-center"><input type="radio" name="crit3" value="1" onchange="calcRubric()"></td>
+                                <td class="p-2.5 border border-slate-300 text-center"><input type="radio" name="crit3" value="0" onchange="calcRubric()"></td>
+                            </tr>
+                            <tr>
+                                <td class="p-2.5 border border-slate-300 font-semibold">4. Pitch en video</td>
+                                <td class="p-2.5 border border-slate-300 text-center"><input type="radio" name="crit4" value="2" checked onchange="calcRubric()"></td>
+                                <td class="p-2.5 border border-slate-300 text-center"><input type="radio" name="crit4" value="1" onchange="calcRubric()"></td>
+                                <td class="p-2.5 border border-slate-300 text-center"><input type="radio" name="crit4" value="0" onchange="calcRubric()"></td>
+                            </tr>
+                            <tr>
+                                <td class="p-2.5 border border-slate-300 font-semibold">5. Presentación del sitio</td>
+                                <td class="p-2.5 border border-slate-300 text-center"><input type="radio" name="crit5" value="2" checked onchange="calcRubric()"></td>
+                                <td class="p-2.5 border border-slate-300 text-center"><input type="radio" name="crit5" value="1" onchange="calcRubric()"></td>
+                                <td class="p-2.5 border border-slate-300 text-center"><input type="radio" name="crit5" value="0" onchange="calcRubric()"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Retroalimentación del Profesional -->
+                <div class="grid sm:grid-cols-3 gap-3">
+                    <div>
+                        <label class="font-bold text-navy-900 block mb-1">Fortalezas:</label>
+                        <textarea rows="3" class="w-full border border-slate-300 rounded-lg p-2" placeholder="Ej. Sólida validación técnica en MPa y barrera hidrofóbica..."></textarea>
+                    </div>
+                    <div>
+                        <label class="font-bold text-navy-900 block mb-1">Oportunidades de mejora:</label>
+                        <textarea rows="3" class="w-full border border-slate-300 rounded-lg p-2" placeholder="Ej. Detallar acuerdos logísticos de recolección en zafra..."></textarea>
+                    </div>
+                    <div>
+                        <label class="font-bold text-navy-900 block mb-1">Recomendación:</label>
+                        <textarea rows="3" class="w-full border border-slate-300 rounded-lg p-2" placeholder="Ej. Ejecutar prueba piloto con distribuidor local de motores..."></textarea>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-3 gap-3 items-center bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                    <div>
+                        <label class="font-bold text-slate-700 block">Profesional evaluador:</label>
+                        <input type="text" placeholder="Nombre y cargo" class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 mt-1">
+                    </div>
+                    <div>
+                        <label class="font-bold text-slate-700 block">Fecha de evaluación:</label>
+                        <input type="text" value="20/11/2026" class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 mt-1">
+                    </div>
+                    <div class="text-right">
+                        <span class="text-xs font-bold uppercase text-slate-500 block">Puntaje Total Calculado</span>
+                        <span id="rubric-total" class="text-2xl font-display font-bold text-forest-700">10 / 10 pts</span>
+                    </div>
+                </div>
+
+                <div class="flex justify-end gap-2 pt-2">
+                    <button onclick="window.print()" class="bg-forest-600 hover:bg-forest-700 text-white font-bold px-4 py-2 rounded-xl">
+                        <i class="fa-solid fa-print mr-1.5"></i>Imprimir Evaluación
+                    </button>
+                    <button onclick="toggleRubricModal()" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold px-4 py-2 rounded-xl">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         JAVASCRIPT: INTERACTIVIDAD DEL LOGO, PROTOTIPO, CANVAS, PITCH Y RÚBRICA
+         ===================================================================== -->
+    <script>
+        // 1. Menú Móvil y Modal de Rúbrica
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+        function toggleRubricModal() {
+            document.getElementById('rubric-modal').classList.toggle('hidden');
+        }
+
+        // 1B. Alternar visualización del Logo en Gran Formato (Logo sin fondo.png vs logo con fondo blanco.jpg)
+        function switchShowcaseLogo(mode) {
+            const imgEl = document.getElementById('main-showcase-logo');
+            const boxEl = document.getElementById('logo-showcase-box');
+            const btnTrans = document.getElementById('btn-logo-trans');
+            const btnWhite = document.getElementById('btn-logo-white');
+
+            if (mode === 'white') {
+                imgEl.src = 'logo con fondo blanco.jpg';
+                boxEl.className = 'my-4 p-6 rounded-2xl bg-white border border-slate-200 flex items-center justify-center min-h-[310px]';
+                btnWhite.className = 'text-[11px] font-bold px-2.5 py-1 rounded-lg bg-navy-900 text-white transition';
+                btnTrans.className = 'text-[11px] font-bold px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition';
+            } else {
+                imgEl.src = 'Logo sin fondo.png';
+                boxEl.className = 'my-4 p-6 rounded-2xl bg-gradient-to-br from-slate-50 via-white to-forest-50/40 border border-slate-100 flex items-center justify-center min-h-[310px]';
+                btnTrans.className = 'text-[11px] font-bold px-2.5 py-1 rounded-lg bg-navy-900 text-white transition';
+                btnWhite.className = 'text-[11px] font-bold px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition';
+            }
+        }
+
+        // 2. Cargar fotos locales personalizadas (Foto del fundador o prototipo)
+        function loadCustomPhoto(event, imgId, fallbackId) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imgEl = document.getElementById(imgId);
+                imgEl.src = e.target.result;
+                imgEl.classList.remove('hidden');
+                if (fallbackId) {
+                    document.getElementById(fallbackId).classList.add('hidden');
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // 3. Pestañas de Empatía (Buyer Persona vs Mapa de Empatía)
+        function switchEmpathyTab(tab) {
+            const personaContent = document.getElementById('tab-persona-content');
+            const empathyContent = document.getElementById('tab-empathy-content');
+            const personaBtn = document.getElementById('tab-persona-btn');
+            const empathyBtn = document.getElementById('tab-empathy-btn');
+
+            if (tab === 'persona') {
+                personaContent.classList.remove('hidden');
+                empathyContent.classList.add('hidden');
+                personaBtn.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-forest-500 text-white transition';
+                empathyBtn.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-white/10 text-slate-200 hover:bg-white/20 transition';
+            } else {
+                personaContent.classList.add('hidden');
+                empathyContent.classList.remove('hidden');
+                empathyBtn.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-forest-500 text-white transition';
+                personaBtn.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-white/10 text-slate-200 hover:bg-white/20 transition';
+            }
+        }
+
+        // 4. Datos de los 7 Hotspots del Prototipo BIO-MOTOR 1.0
+        const hotspotsData = {
+            1: {
+                title: "1. Cuerpo de 100% Pulpa de Bagazo Renovable",
+                benefit: "Elimina el uso de plástico (EPS), evita sanciones ambientales/EPR y permite que el empaque sea 100% compostable tras su uso logístico.",
+                tech: "Elaborado con fibra de bagazo de caña (40-50% celulosa) pulpeada con carbonato/bicarbonato de sodio y deslignificada con oxígeno (rendimiento del 72%)."
+            },
+            2: {
+                title: "2. Ajuste de Contorno de Precisión (±0.5 mm)",
+                benefit: "Inmoviliza piezas metálicas o electrónicas pesadas sin vibraciones ni holguras, manteniendo el ritmo (Takt time) de empaque en bodega.",
+                tech: "Moldeado por termocompresión 3D con tolerancias milimétricas que copian la geometría exacta de las aletas de enfriamiento y caja de bornes del motor."
+            },
+            3: {
+                title: "3. Matriz Protectora Bio-Integrada",
+                benefit: "Disipa la energía cinética ante caídas o apilamiento en bodega (hasta 4 metros), evitando abolladuras o fracturas en mercancía costosa.",
+                tech: "Nervaduras orgánicas multicapa y cámaras de aire estructurales tipo panal que actúan como resortes mecánicos de deformación controlada."
+            },
+            4: {
+                title: "4. Superficie con Barrera Hidrofóbica ('Lujo Sostenible')",
+                benefit: "Elimina el miedo del gerente logístico a que el empaque sude o se ablande en bodegas húmedas, además de elevar la estética del unboxing corporativo.",
+                tech: "Aglutinante interno de almidón de yuca y baño superficial de goma laca (shellac) que reduce la absorción de agua de 22.36% a solo 8.52%."
+            },
+            5: {
+                title: "5. Sello en Relieve 'BIO-MOTOR 1.0'",
+                benefit: "Comunica trazabilidad, lote y certificación ecológica sin gastar en tintas químicas ni etiquetas plásticas adhesivas.",
+                tech: "Grabado en bajo relieve directamente en la matriz de aluminio mecanizado CNC durante el ciclo de prensado en caliente (160 °C - 180 °C)."
+            },
+            6: {
+                title: "6. Cavidad Central de Alta Carga (Motor Eléctrico)",
+                benefit: "Demuestra que el empaque soporta cargas industriales de alta densidad (motores, compresores, televisores) y no solo productos ligeros.",
+                tech: "Paredes perimetrales de densidad reforzada con 10.6 MPa de resistencia máxima a la tensión (+25% de mejora mecánica) que distribuyen el peso axial y radial."
+            },
+            7: {
+                title: "7. Trazabilidad de Biomasa de Caña de Azúcar",
+                benefit: "Garantiza economía circular 100% guatemalteca auditable para las memorias de sostenibilidad (ESG) del cliente corporativo.",
+                tech: "Aprovecha el 9% de fracción excedentaria del bagazo agroindustrial local, sin competir con el 91% destinado a cogeneración eléctrica en los ingenios."
+            }
+        };
+
+        function selectHotspot(num) {
+            for (let i = 1; i <= 7; i++) {
+                document.getElementById('hs-' + i).classList.remove('active');
+            }
+            document.getElementById('hs-' + num).classList.add('active');
+
+            const data = hotspotsData[num];
+            document.getElementById('hs-badge').innerText = "Parte Nº " + num + " Seleccionada";
+            document.getElementById('hs-title').innerText = data.title;
+            document.getElementById('hs-benefit').innerText = data.benefit;
+            document.getElementById('hs-tech').innerText = data.tech;
+        }
+
+        // 5. Filtro del Business Model Canvas (Todos vs Validados *)
+        function filterCanvas(mode) {
+            const hyps = document.querySelectorAll('.canvas-hyp');
+            const btnAll = document.getElementById('btn-canvas-all');
+            const btnVal = document.getElementById('btn-canvas-val');
+
+            if (mode === 'validated') {
+                hyps.forEach(el => el.classList.add('opacity-30'));
+                btnVal.className = 'px-3.5 py-2 rounded-xl text-xs font-bold bg-forest-600 text-white transition';
+                btnAll.className = 'px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-200 text-slate-700 transition';
+            } else {
+                hyps.forEach(el => el.classList.remove('opacity-30'));
+                btnAll.className = 'px-3.5 py-2 rounded-xl text-xs font-bold bg-navy-900 text-white transition';
+                btnVal.className = 'px-3.5 py-2 rounded-xl text-xs font-bold bg-forest-100 text-forest-800 hover:bg-forest-200 transition';
+            }
+        }
+
+        // 6. Reproductor de Video Oficial (Eco-Bagazo_Pitch_Empresarial.mp4) y Simulador
+        function showOfficialVideo() {
+            document.getElementById('html5-pitch-video').classList.remove('hidden');
+            document.getElementById('interactive-pitch-deck').classList.add('hidden');
+            document.getElementById('iframe-pitch-video').classList.add('hidden');
+        }
+
+        function showInteractiveDeck() {
+            const videoEl = document.getElementById('html5-pitch-video');
+            videoEl.pause();
+            videoEl.classList.add('hidden');
+            document.getElementById('iframe-pitch-video').classList.add('hidden');
+            document.getElementById('interactive-pitch-deck').classList.remove('hidden');
+        }
+
+        const pitchSlides = [
+            {
+                tag: "SLIDE 1/5 · GANCHO Y PROBLEMA (0:00 - 0:50)",
+                title: "El Dilema del Director de Logística: ¿Sostenibilidad o Mermas?",
+                body: "\"Cada año, el 40% de los residuos plásticos proviene de empaques. En Guatemala, los gerentes de logística B2B quieren eliminar el duroport (EPS) de sus motores y electrodomésticos para cumplir metas ESG, pero tienen pánico a que un empaque ecológico absorba humedad tropical y destruya mercancía costosa.\""
+            },
+            {
+                tag: "SLIDE 2/5 · SOLUCIÓN E INSIGHT TÉCNICO (0:50 - 1:45)",
+                title: "Eco-Bagazo: Ingeniería que Elimina la Aversión a la Pérdida",
+                body: "\"Transformamos el bagazo de caña excedentario en insertos termo-comprimidos que sustituyen 1-a-1 al duroport. Mediante deslignificación con oxígeno alcanzamos 10.6 MPa de resistencia a la tensión (+25%), y con almidón de yuca y goma laca reducimos la absorción de agua de 22.36% a solo 8.52%.\""
+            },
+            {
+                tag: "SLIDE 3/5 · PROTOTIPO BIO-MOTOR 1.0 (1:45 - 2:45)",
+                title: "Matriz Protectora Bio-Integrada sin Blanqueamiento Químico",
+                body: "\"Nuestro prototipo BIO-MOTOR 1.0 utiliza nervaduras orgánicas tipo panal que disipan impactos y ofrecen un ajuste de contorno de precisión (±0.5 mm) sin alterar el Takt time de empaque. Además, eliminamos el blanqueamiento químico para reducir costos operativos.\""
+            },
+            {
+                tag: "SLIDE 4/5 · MODELO DE NEGOCIO Y MARKETING B2B (2:45 - 3:40)",
+                title: "Suministro Excedentario (9%) y Venta Consultiva en LinkedIn",
+                body: "\"Validamos que el 91% del bagazo en Guatemala va a cogeneración eléctrica; por eso negociamos sobre el 9% excedentario. Monetizamos mediante contratos B2B por volumen y Setup Fee de moldes, atrayendo Leads con videos de pruebas Drop-test en LinkedIn.\""
+            },
+            {
+                tag: "SLIDE 5/5 · VIABILIDAD Y LLAMADO A LA ACCIÓN (3:40 - 4:30)",
+                title: "Presupuesto MVP Validado (Q 4,935.00) y Escalabilidad",
+                body: "\"Con una inversión inicial de Q 4,935.00 para molde CNC y ensayos de laboratorio, Eco-Bagazo está listo para su primer piloto industrial y certificación ASTM D6400. Súmate a la transición circular: Eco-Bagazo, protección industrial, evolución circular.\""
+            }
+        ];
+
+        let pitchInterval = null;
+        let pitchSeconds = 0;
+
+        function setPitchSlide(index) {
+            const s = pitchSlides[index];
+            document.getElementById('pitch-slide-tag').innerText = s.tag;
+            document.getElementById('pitch-slide-title').innerText = s.title;
+            document.getElementById('pitch-slide-body').innerText = s.body;
+
+            const dots = document.querySelectorAll('.pitch-dot');
+            dots.forEach((d, idx) => {
+                d.className = idx === index
+                    ? 'pitch-dot w-7 h-7 rounded-lg bg-forest-500 text-white text-xs font-bold'
+                    : 'pitch-dot w-7 h-7 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-bold';
+            });
+        }
+
+        function togglePitchPresentation() {
+            const btn = document.getElementById('pitch-play-btn');
+            if (pitchInterval) {
+                clearInterval(pitchInterval);
+                pitchInterval = null;
+                btn.innerHTML = '<i class="fa-solid fa-play"></i><span>Continuar Pitch Guiado</span>';
+            } else {
+                btn.innerHTML = '<i class="fa-solid fa-pause"></i><span>Pausar Pitch</span>';
+                pitchInterval = setInterval(() => {
+                    pitchSeconds++;
+                    if (pitchSeconds >= 270) {
+                        clearInterval(pitchInterval);
+                        pitchInterval = null;
+                        btn.innerHTML = '<i class="fa-solid fa-check"></i><span>Pitch Completado (4:30)</span>';
+                    }
+                    const mins = String(Math.floor(pitchSeconds / 60)).padStart(2, '0');
+                    const secs = String(pitchSeconds % 60).padStart(2, '0');
+                    document.getElementById('pitch-timer-display').innerText = `${mins}:${secs} / 04:30`;
+
+                    const slideIndex = Math.min(4, Math.floor(pitchSeconds / 54));
+                    setPitchSlide(slideIndex);
+                }, 1000);
+            }
+        }
+
+        function resetPitchPresentation() {
+            if (pitchInterval) clearInterval(pitchInterval);
+            pitchInterval = null;
+            pitchSeconds = 0;
+            document.getElementById('pitch-timer-display').innerText = "00:00 / 04:30";
+            document.getElementById('pitch-play-btn').innerHTML = '<i class="fa-solid fa-play"></i><span>Iniciar Pitch Guiado (4:30 min)</span>';
+            setPitchSlide(0);
+        }
+
+        function loadLocalPitchVideo(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const videoEl = document.getElementById('html5-pitch-video');
+            videoEl.src = URL.createObjectURL(file);
+            showOfficialVideo();
+            videoEl.play();
+        }
+
+        // 7. Cálculo automático de la Rúbrica del Profesional Externo
+        function calcRubric() {
+            let total = 0;
+            for (let i = 1; i <= 5; i++) {
+                const selected = document.querySelector(`input[name="crit${i}"]:checked`);
+                if (selected) total += parseInt(selected.value, 10);
+            }
+            document.getElementById('rubric-total').innerText = total + " / 10 pts";
+        }
+    </script>
+</body>
+</html>
